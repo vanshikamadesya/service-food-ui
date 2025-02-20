@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="bg-black text-white shadow-md p-4 py-9 ">
+    <header className="bg-black/10 text-white p-4 py-9 ">
       <div className="container mx-auto flex justify-between items-center px-32">
         {/* Logo or Brand Name */}
         <h1 className="text-4xl font-bold ">Service Foods</h1>
