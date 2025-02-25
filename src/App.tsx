@@ -1,13 +1,13 @@
-import './App.css'
-import './index.css'
+import "./index.css";
+import OncePlace from "./components/once-place";
+
 
 function App() {
-
   return (
     <>
-    <div></div>
+      <OncePlace />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
