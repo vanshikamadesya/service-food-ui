@@ -1,13 +1,13 @@
-import './App.css'
-import './index.css'
+import "./index.css";
+import OurCategories from "./components/our-categories";
+
 
 function App() {
-
   return (
     <>
-    <div></div>
+      <OurCategories />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
