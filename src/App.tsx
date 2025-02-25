@@ -1,4 +1,5 @@
 import './App.css'
+import OurValues from './components/OurValues'
 import './index.css'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
     <div></div>
+    <OurValues />
     </>
   )
 }
