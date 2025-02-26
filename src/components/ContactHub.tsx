@@ -3,7 +3,7 @@ import contactHubImage from "../assets/images/contact-hub.png";
 
 const ContentHub: React.FC = () => {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full min-h-screen">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -15,11 +15,10 @@ const ContentHub: React.FC = () => {
       </div>
 
       {/* Content Section */}
-      <div className="relative flex flex-col justify-center items-start h-full p-48 text-white max-w-4xl leading-relaxed">
-        <h1 className="text-[55px] font-bold tracking-wide font-inter">
-          Content Hub
+      <div className="relative flex flex-col justify-end md:justify-center items-start min-h-screen p-8 sm:p-10 md:p-52 mb-12 sm:mb-0  text-white max-w-4xl leading-relaxed  md:pb-7">
+      <h1 className="text-4xl sm:text-5xl md:text-[55px] font-bold tracking-wide font-inter mb-6 md:mb-4">          Content Hub
         </h1>
-        <p className="text-md  tracking-wide font-inter font-normal max-w-[470px] leading-snug [word-spacing:0.2rem]">
+        <p className="text-sm sm:text-base md:text-md tracking-wider font-inter font-normal max-w-full lg:max-w-[470px] leading-snug [word-spacing:0.2rem] mb-32 ">
           Lorem Ipsum is simply dummy text of the printing and type setting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s.
