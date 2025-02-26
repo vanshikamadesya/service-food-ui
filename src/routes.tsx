@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
+import ContentHub from "./components/ContactHub";
 
 export const router = createBrowserRouter(
   [
@@ -12,8 +13,8 @@ export const router = createBrowserRouter(
             element: <p>hello '/home'</p> 
         },
         { 
-            path: "/page1", 
-            element: <p>hello '/page1'</p> 
+            path: "/contact", 
+            element: <ContentHub/>
         },
         { 
             
