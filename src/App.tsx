@@ -1,13 +1,13 @@
-import './App.css'
-import './index.css'
+import "./index.css";
+import ExclusiveBrands from "./components/exclusive-brands";
+
 
 function App() {
-
   return (
     <>
-    <div></div>
+      <ExclusiveBrands />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
