@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
 
       {/* Bottom Footer */}
       <div className="text-[#BCB5A4] text-sm py-8">
-      <hr className="border-[#d0c4b7] w-full my-4 hidden md:block" />
+        <hr className="border-[#d0c4b7] w-full my-4 hidden md:block" />
 
         <div className="max-w-7xl mx-auto px-6 flex flex-col-reverse md:flex-row items-center justify-between">
           <p className="text-center md:text-left font-normal text-lg font-dmSans">
