@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; 
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <header className="bg-black text-white py-5 px-6 md:px-10 lg:px-32">
+      <header className="fixed left-0 md:top-5  w-full z-40  text-white py-5 px-6 md:px-10 lg:px-32">
         <div className="container mx-auto flex justify-between items-center">
           {/* Logo */}
-          <h1 className="text-3xl md:text-4xl font-bold">Service Foods</h1>
+          <h1 className="text-3xl md:text-xl tracking-widest font-extrabold md:mr-6">
+            SERVICE FOODS
+          </h1>
 
           {/* Hamburger Menu - Mobile */}
           <button
@@ -22,12 +24,12 @@ const Header = () => {
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex">
-            <ul className="flex space-x-6 text-lg font-medium">
-              <li>
+            <ul className="flex space-x-6 text-md font-inter tracking-wider">
+              {/* <li>
                 <Link to="/" className="hover:text-gray-400 transition">
                   Home
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/about" className="hover:text-gray-400 transition">
                   About
@@ -121,7 +123,6 @@ const Header = () => {
           </div>
         )}
       </header>
-
     </>
   );
 };
