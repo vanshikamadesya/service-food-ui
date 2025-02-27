@@ -58,6 +58,14 @@ const ImpactSection: React.FC<ImpactSectionProps> = ({
         </div>
       </div>
 
+      {/* Fixed Mobile Header - Only visible on mobile */}
+      <div className="absolute top-0 left-0 right-0 z-[99] md:hidden bg-black bg-opacity-50 pt-16 pb-6 text-center">
+        <h1 className="text-3xl font-bold uppercase tracking-wide mb-6 font-['Inter']">
+          {mainTitle}
+        </h1>
+        <div className="w-28 h-1 bg-white mx-auto"></div>
+      </div>
+
       {/* Swiper Component */}
       <Swiper
         ref={swiperRef}
@@ -76,17 +84,9 @@ const ImpactSection: React.FC<ImpactSectionProps> = ({
                 backgroundPosition: "center"
               }}
             >
-              {/* Mobile Overlay - Shown only on mobile with CSS */}
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between text-center px-4 font-['Inter'] md:hidden">
-                <div className="mt-16">
-                  <h1 className="text-3xl font-bold uppercase tracking-wide mb-6 font-['Inter']">
-                    {mainTitle}
-                  </h1>
-                  <div className="w-28 h-1 bg-white mx-auto"></div>
-                </div>
-                
-                {/* Mobile Subtitle and Content */}
-                <div className="mb-10 text-left ml-6 max-w-40">
+              {/* Mobile Slide Content Container - Shown only on mobile */}
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end text-left px-4 pt-32 pb-10 font-['Inter'] md:hidden">
+                <div className="ml-6 max-w-40">
                   <h2 className="text-xl font-bold uppercase mb-2 font-['Inter']">
                     {slide.subtitle || slide.title}
                   </h2>
