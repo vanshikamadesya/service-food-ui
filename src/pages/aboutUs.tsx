@@ -6,6 +6,8 @@ import teamMembers from '../data/teamMembers';
 import ImpactSection from "../components/tab-carousel";
 import { impactSlides } from "../data/impactSlides";
 import { greatChiefSlides } from "../data/greatChiefSlides";
+import Timeline from "../components/TimeLine";
+import { timelineData } from "../data/TimeLineData";
 
 const Impact = () => {
   return <ImpactSection slides={impactSlides} mainTitle="HOW WE’RE MAKING AN IMPACT" />;
@@ -39,7 +41,9 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
       </div>
-        
+      <div className="flex justify-center items-center min-h-screen bg-[#EFEBE7]">
+      <Timeline items={timelineData} />
+    </div>
         <GreatChief />
         
         <Impact />
