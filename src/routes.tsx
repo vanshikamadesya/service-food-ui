@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
 import HomePage from "./pages/HomePage";
-
+import ExclusiveBrands from "./components/ExclusiveBrands";
 export const router = createBrowserRouter(
   [
     {
@@ -12,6 +12,11 @@ export const router = createBrowserRouter(
             path: "", 
             element: <HomePage/>
         },
+        {    
+          path: "/product", 
+          element: <ExclusiveBrands/>
+      },
+
       ],
     },
     {
