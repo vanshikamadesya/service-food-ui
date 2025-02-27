@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/swiper-bundle.css";
 import BeveragesImg from "../assets/images/Beverages-img.png";
 import FrozenFoodsImg from "../assets/images/frozen-foods.png";
 import SchoolLunchImg from "../assets/images/School-Lunch.png";
@@ -35,7 +34,7 @@ const CatalogSlider: React.FC = () => {
         );
 
   return (
-    <div className="bg-gray-700 text-white py-10 px-5 md:py-16 tracking-wide w-full overflow-hidden">
+    <div className="bg-gray-700 text-white py-10  md:py-16 tracking-wide w-full overflow-hidden">
       {/* Section Heading */}
       <h2 className="text-center text-lg sm:text-2xl font-semibold mb-2 text-white">
         OUR CATALOGUES
@@ -79,7 +78,7 @@ const CatalogSlider: React.FC = () => {
       </div>
 
       {/* Swiper Slider */}
-      <div className="relative md:px-6 md:mb-10 ">
+      <div className="relative pl-11 md:mb-10 ">
         <Swiper
           spaceBetween={15}
           navigation={{
@@ -114,26 +113,23 @@ const CatalogSlider: React.FC = () => {
         </Swiper>
       </div>
 
-      {/* Navigation Arrows - Centered */}
-{/* Navigation Arrows */}
-<div className="flex justify-center sm:justify-end items-center gap-4 mt-4 sm:mt-6 sm:relative sm:bottom-0 sm:right-10 md:pr-16">
-  <button
-    className="custom-swiper-prev font-bold flex items-center justify-center 
+      {/* Navigation Arrows */}
+      <div className="hidden sm:flex justify-center sm:justify-end items-center gap-4 mt-4 sm:mt-6 sm:relative sm:bottom-0 sm:right-10 md:pr-16">
+        <button
+          className="custom-swiper-prev font-bold flex items-center justify-center 
     w-10 h-10 text-2xl text-white 
-    sm:w-12 sm:h-12 sm:text-3xl 
     lg:w-16 lg:h-16 lg:text-6xl"
-  >
-    ←
-  </button>
-  <button
-    className="custom-swiper-next font-bold flex items-center justify-center 
+        >
+          ←
+        </button>
+        <button
+          className="custom-swiper-next font-bold flex items-center justify-center 
     w-10 h-10 text-2xl text-white 
-    sm:w-12 sm:h-12 sm:text-3xl 
     lg:w-16 lg:h-16 lg:text-6xl"
-  >
-    →
-  </button>
-</div>
+        >
+          →
+        </button>
+      </div>
     </div>
   );
 };
