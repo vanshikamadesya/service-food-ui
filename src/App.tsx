@@ -1,13 +1,12 @@
-import './App.css';
-import './index.css';
-import AboutUs from './pages/aboutUs';
-
+import "./index.css";
+import Timeline from "./components/TimeLine";
+import { timelineData } from "./data/TimeLineData"; // ✅ Import data
 
 function App() {
   return (
-    
-      <AboutUs />
-    
+    <div className="flex justify-center items-center min-h-screen bg-[#EFEBE7]">
+      <Timeline items={timelineData} />
+    </div>
   );
 }
 
