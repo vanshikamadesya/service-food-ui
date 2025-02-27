@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
 import HomePage from "./pages/HomePage";
+import MoreVideos from "./components/MoreVideos"
 
 export const router = createBrowserRouter(
   [
@@ -12,6 +13,10 @@ export const router = createBrowserRouter(
             path: "", 
             element: <HomePage/>
         },
+        {    
+          path: "/video", 
+          element: <MoreVideos/>
+      },
       ],
     },
     {
