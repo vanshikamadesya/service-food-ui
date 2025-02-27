@@ -3,7 +3,23 @@ import 'swiper/swiper-bundle.css'; // Use this for all styles
 import { Pagination } from 'swiper/modules';
 import videoImage from '../assets/images/bg-banner.jpg';
 import teamMembers from '../data/teamMembers';
+import ImpactSection from "../components/tab-carousel";
+import { impactSlides } from "../data/impactSlides";
+import { greatChiefSlides } from "../data/greatChiefSlides";
 
+const Impact = () => {
+  return <ImpactSection slides={impactSlides} mainTitle="HOW WE’RE MAKING AN IMPACT" />;
+};
+
+function GreatChief() {
+  return (
+    <ImpactSection 
+      slides={greatChiefSlides} 
+      mainTitle="Behind Every Great Chef" 
+      showDownloadButton={false} 
+    />
+  );
+}
 
 const AboutUs: React.FC = () => {
   return (
@@ -23,6 +39,10 @@ const AboutUs: React.FC = () => {
           </p>
         </div>
       </div>
+        
+        <GreatChief />
+        
+        <Impact />
 
       {/* Leadership Section */}
       <div className="relative py-12 bg-[#EFEBE7]">

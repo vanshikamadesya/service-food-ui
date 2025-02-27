@@ -10,7 +10,7 @@ interface Slide {
   title: string;
   image: string;
   content?: string;
-  subtitle?: string; // Added subtitle for mobile view
+  subtitle?: string;
 }
 
 interface ImpactSectionProps {
@@ -29,16 +29,13 @@ const ImpactSection: React.FC<ImpactSectionProps> = ({
 
   return (
     <div className="relative w-full h-[90vh] md:h-[90vh] overflow-hidden text-white font-['Inter']">
-      {/* Desktop Navigation Elements - Hidden on mobile with CSS */}
       <div className="absolute text-white top-[50px] left-1/2 transform -translate-x-1/2 z-[99] text-center w-full hidden md:block">
-        {/* Dynamic Title */}
-        <h1 className="text-3xl font-bold uppercase tracking-wide font-['Inter'] text-white">
+        <h1 className="text-3xl font-bold uppercase tracking-wide text-white">
           {mainTitle}
         </h1>
         <div className="w-28 h-1 bg-white mx-auto mt-4"></div>
         
-        {/* Navigation Bar */}
-        <div className="mt-10 flex justify-center items-center text-lg font-['Inter'] font-semibold text-gray-300">
+        <div className="mt-10 flex justify-center items-center text-lg font-semibold text-gray-300">
           {slides.map((slide, idx) => (
             <div key={idx} className="flex items-center">
               <button
@@ -52,13 +49,12 @@ const ImpactSection: React.FC<ImpactSectionProps> = ({
                   <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white"></div>
                 )}
               </button>
-              {idx < slides.length - 1 && <span className="text-white font-['Inter'] px-2">|</span>}
+              {idx < slides.length - 1 && <span className="text-white px-2">|</span>}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Swiper Component */}
       <Swiper
         ref={swiperRef}
         modules={[Navigation]}
@@ -70,39 +66,34 @@ const ImpactSection: React.FC<ImpactSectionProps> = ({
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="w-full h-full bg-cover bg-center flex flex-col font-['Inter'] items-center text-white relative"
+              className="w-full h-full bg-cover bg-center flex flex-col items-center text-white relative"
               style={{ 
                 backgroundImage: `url(${slide.image})`,
                 backgroundPosition: "center"
               }}
             >
-              {/* Mobile Overlay - Shown only on mobile with CSS */}
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between text-center px-4 font-['Inter'] md:hidden">
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-between text-center px-4 md:hidden">
                 <div className="mt-16">
-                  <h1 className="text-3xl font-bold uppercase tracking-wide mb-6 font-['Inter']">
+                  <h1 className="text-3xl font-bold uppercase tracking-wide mb-6">
                     {mainTitle}
                   </h1>
                   <div className="w-28 h-1 bg-white mx-auto"></div>
                 </div>
-                
-                {/* Mobile Subtitle and Content */}
                 <div className="mb-10 text-left ml-6 max-w-40">
-                  <h2 className="text-xl font-bold uppercase mb-2 font-['Inter']">
+                  <h2 className="text-xl font-bold uppercase mb-2">
                     {slide.subtitle || slide.title}
                   </h2>
-                  <p className="text-base max-w-xs font-['Inter'] font-medium leading-relaxed">
+                  <p className="text-base max-w-xs font-medium leading-relaxed">
                     {slide.content || "Default content for this section."}
                   </p>
                   {showDownloadButton && (
-                    <button className="bg-white text-black px-6 py-3 rounded-lg font-semibold text-sm mt-4 transition hover:bg-gray-200 font-['Inter']">
+                    <button className="bg-white text-black px-6 py-3 rounded-lg font-semibold text-sm mt-4 transition hover:bg-gray-200">
                       Download Report
                     </button>
                   )}
                 </div>
               </div>
-              
-              {/* Desktop Slide Content - Hidden on mobile with CSS */}
-              <div className="absolute top-1/2 left-[10vw] w-[40vw] font-['Inter'] max-w-lg text-left hidden md:block">
+              <div className="absolute top-1/2 left-[10vw] w-[40vw] max-w-lg text-left hidden md:block">
                 <p className="text-3xl font-medium leading-relaxed">
                   {slide.content || "Default content for this section."}
                 </p>
@@ -117,7 +108,6 @@ const ImpactSection: React.FC<ImpactSectionProps> = ({
         ))}
       </Swiper>
 
-      {/* Navigation Buttons - Different styles for mobile/desktop using CSS */}
       <button className="prev-btn absolute z-[9] md:right-[150px] md:bottom-[50px] md:left-auto md:top-auto left-4 top-1/2 transform md:translate-y-0 -translate-y-1/2" onClick={() => swiperRef.current?.swiper.slidePrev()}>
         <img src={leftArrow} alt="Previous" className="w-8 h-8 md:w-auto md:h-auto" />
       </button>
