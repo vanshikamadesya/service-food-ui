@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
+import VideoContent from "./components/videoContent";
 
 export const router = createBrowserRouter(
   [
@@ -9,7 +10,7 @@ export const router = createBrowserRouter(
       children: [
         {    
             path: "/page2", 
-            element: <p>hello '/page2'</p> 
+            element: <VideoContent />
         },
       ],
     },
