@@ -76,7 +76,7 @@ const ExclusiveBrands = () => {
   }, []);
   
   return (
-    <div className="w-full mx-auto py-10 relative  ">
+    <div className="w-full mx-auto py-24 relative  ">
       <h2 className="text-2xl md:text-3xl font-bold md:mt-6 text-center text-[#3A342B] font-inter ">
         EXCLUSIVE BRANDS
       </h2>
@@ -139,7 +139,7 @@ const ExclusiveBrands = () => {
       </div>
 
       {/* Navigation Buttons */}
-      <div className="absolute bottom-[-50px] right-44 py-10 flex gap-11 text-[#3A342B] ">
+      <div className="absolute bottom-[-50px] right-44 py-20  flex gap-11 text-[#3A342B] ">
         <button onClick={() => swiperRef.current?.slidePrev()}>
           <img
             src={leftArrow}
