@@ -28,10 +28,10 @@ const OurValues = () => {
   return (
     <div className="relative w-full min-h-[45vh] flex flex-col items-center justify-center overflow-hidden text-center bg-[#EFEBE7] px-4 md:px-">
       {/* Title */}
-      <h2 className="text-lg md:text-2xl font-inter font-regular uppercase tracking-widest text-gray-800  md:mt-2">
+      <h2 className="text-lg md:text-2xl font-inter font-semibold uppercase tracking-widest text-[#3A342B] md:mt-2">
         OUR VALUES
       </h2>
-      <div className="w-16 md:w-24 h-0.7 bg-gray-800 mx-auto my-2"></div>
+      <div className="w-16 md:w-24 h-0.7 bg-[#3A342B] mx-auto my-2"></div>
 
       {/* Swiper Component */}
       <Swiper
@@ -47,7 +47,7 @@ const OurValues = () => {
         {values.map((value, index) => (
           <SwiperSlide key={index} className="flex flex-col items-center justify-center text-center pt-6 md:pt-14 px-4 md:px-10 mr-0.5">
             <h3 className="text-2xl md:text-4xl font-extrabold text-[#86704D]">{value.title}</h3>
-            <p className="mt-4 text-base md:text-xl text-gray-800 max-w-xs md:max-w-lg mx-auto font-inter font-regular">
+            <p className="mt-4 text-base md:text-xl text-[#080A0B] max-w-xs md:max-w-lg mx-auto font-inter font-regular">
               {value.description}
             </p>
           </SwiperSlide>
