@@ -5,8 +5,11 @@ function ProductPage() {
   return (
     <>
     <OncePlace/>
+    <OurCategories/>
+
     </>
   )
 }
+import OurCategories from '../components/our-categories'
 
 export default ProductPage
