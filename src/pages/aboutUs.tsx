@@ -1,25 +1,24 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css'; // Use this for all styles
 import { Pagination } from 'swiper/modules';
-import videoImage from '../assets/bg-banner.jpg';
+import videoImage from '../assets/images/bg-banner.jpg';
 import teamMembers from '../data/teamMembers';
+
 
 const AboutUs: React.FC = () => {
   return (
-    <div>
+    <div className="font-['Inter']">
       {/* Hero Section */}
       <div
-        className="relative w-full py-32 sm:py-48 min-h-[600px] sm:min-h-[860px] bg-center bg-cover flex items-end justify-start px-6 sm:px-12"
+        className="relative w-full py-32 sm:py-48 min-h-[87vh] bg-center bg-cover flex items-end justify-start px-6 sm:px-12"
         style={{ backgroundImage: `url(${videoImage})` }}
       >
-        
-        
         {/* Content Overlay */}
         <div className='relative z-10 max-w-[627px] text-white'>
           <h1 className="text-4xl sm:text-[50px] lg:text-[70px] font-semibold leading-tight sm:leading-[90px]">
             Behind Every Great Chef
           </h1>
-          <p className="text-lg sm:text-[20px] mt-4">
+          <p className="text-lg sm:text-[20px] mt-3">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
           </p>
         </div>
@@ -27,9 +26,9 @@ const AboutUs: React.FC = () => {
 
       {/* Leadership Section */}
       <div className="relative py-12 bg-[#EFEBE7]">
-        <h2 className="text-center text-4xl font-bold mb-8 text-[#3A342B]">Our Leadership</h2>
+        <h2 className="text-center text-4xl font-bold mb-8 text-[#4C3525]">Our Leadership</h2>
         <div className="flex justify-center mb-6">
-          <div className="border-t-4 border-[#3A342B] w-40" />
+          <div className="border-t-4 border-[#4C3525] w-40" />
         </div>
 
         {/* Swiper for Mobile */}

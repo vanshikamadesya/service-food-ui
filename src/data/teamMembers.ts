@@ -1,11 +1,11 @@
-import Aneil from '../assets/Leader/Aneil.png';
-import Carolyn from '../assets/Leader/Carolyn.png';
-import Nikul from '../assets/Leader/Nikul Balar.png';
-import Ravi from '../assets/Leader/Ravi.png';
-import Richard from '../assets/Leader/Richard.png';
-import Ross from '../assets/Leader/Ross.png';
-import Stan from '../assets/Leader/Stan.png';
-import Suneil from '../assets/Leader/suneil.png';
+import Aneil from '../assets/images/Leader/Aneil.png';
+import Carolyn from '../assets/images/Leader/Carolyn.png';
+import Nikul from '../assets/images/Leader/Nikul Balar.png';
+import Ravi from '../assets/images/Leader/Ravi.png';
+import Richard from '../assets/images/Leader/Richard.png';
+import Ross from '../assets/images/Leader/Ross.png';
+import Stan from '../assets/images/Leader/Stan.png';
+import Suneil from '../assets/images/Leader/suneil.png';
 
 const teamMembers = [
   { name: "Aneil Balar", image: Aneil, role: "Managing Director", description: "Experienced leader in the food industry." },
