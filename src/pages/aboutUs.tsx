@@ -8,6 +8,7 @@ import { impactSlides } from "../data/impactSlides";
 import { greatChiefSlides } from "../data/greatChiefSlides";
 import Timeline from "../components/TimeLine";
 import { timelineData } from "../data/TimeLineData";
+import OurValues from '../components/OurValues';
 
 const Impact = () => {
   return <ImpactSection slides={impactSlides} mainTitle="HOW WE’RE MAKING AN IMPACT" />;
@@ -45,7 +46,7 @@ const AboutUs: React.FC = () => {
       <Timeline items={timelineData} />
     </div>
         <GreatChief />
-        
+        <OurValues / >
         <Impact />
 
       {/* Leadership Section */}
