@@ -29,7 +29,7 @@ const AboutUs: React.FC = () => {
     <div className="font-['Inter']">
       {/* Hero Section */}
       <div
-        className="relative w-full py-32 sm:py-48 min-h-[87vh] bg-center bg-cover flex items-end justify-start px-6 sm:px-12"
+        className="relative w-full py-32 sm:py-48 min-h-[95vh] bg-center bg-cover flex items-end justify-start px-6 sm:px-12"
         style={{ backgroundImage: `url(${videoImage})` }}
       >
         {/* Content Overlay */}

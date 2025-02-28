@@ -31,7 +31,7 @@ const ImpactSection: React.FC<ImpactSectionProps> = ({
   const nextButtonClass = "impact-next-btn";
 
   return (
-    <div className="relative w-full h-[90vh] md:h-[90vh] overflow-hidden text-white font-['Inter']">
+    <div className="relative w-full h-[105vh] md:h-[100vh] overflow-hidden text-white font-['Inter']">
       {/* Desktop Navigation Elements - Hidden on mobile with CSS */}
       <div className="absolute text-white top-[50px] left-1/2 transform -translate-x-1/2 z-[99] text-center w-full hidden md:block">
         {/* Dynamic Title */}
