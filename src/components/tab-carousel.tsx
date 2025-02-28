@@ -129,17 +129,23 @@ const ImpactSection: React.FC<ImpactSectionProps> = ({
 
       {/* Navigation Buttons - Using unique class names */}
       <button 
-        className={`${prevButtonClass} absolute z-[9] md:right-[150px] md:bottom-[50px] md:left-auto md:top-auto left-4 top-1/2 transform md:translate-y-0 -translate-y-1/2`}
-        onClick={() => swiperRef.current?.swiper.slidePrev()}
-      >
-        <img src={leftArrow} alt="Previous" className="w-6 h-6 md:w-auto md:h-auto" />
-      </button>
-      <button 
-        className={`${nextButtonClass} absolute z-[9] md:right-[50px] md:bottom-[50px] md:left-auto md:top-auto right-4 top-1/2 transform md:translate-y-0 -translate-y-1/2`}
-        onClick={() => swiperRef.current?.swiper.slideNext()}
-      >
-        <img src={rightArrow} alt="Next" className="w-6 h-6 md:w-auto md:h-auto" />
-      </button> 
+  className={`${prevButtonClass} absolute left-4 md:left-auto md:right-[150px] md:bottom-[50px] md:top-auto top-1/2 transform -translate-y-1/2 h-[30px] w-[40px] md:h-auto md:w-auto z-10`}
+  onClick={() => swiperRef.current?.swiper.slidePrev()}
+>
+  <img src={leftArrow} alt="Previous" className="w-full h-full" style={{ filter: 'brightness(0) saturate(100%) invert(1)' }} />
+</button>
+
+<button 
+  className={`${nextButtonClass} absolute right-4 md:right-[50px] md:bottom-[50px] md:top-auto top-1/2 transform -translate-y-1/2 h-[30px] w-[40px] md:h-auto md:w-auto z-10`}
+  onClick={() => swiperRef.current?.swiper.slideNext()}
+>
+  <img src={rightArrow} alt="Next" className="w-full h-full" style={{ filter: 'brightness(0) saturate(100%) invert(1)' }} />
+</button>
+
+
+
+
+
     </div>
   );
 };
