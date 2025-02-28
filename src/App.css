@@ -1,1 +1,12 @@
-@import "inter";
+
+font {
+  font-family: "Inter", sans-serif;
+}
+#businessType,
+#region {
+  background-image: url("../src/assets/images/Vector.png");
+  background-position: right 30px center;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-size: 1.5em;
+}

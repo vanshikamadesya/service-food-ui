@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
-import leftArrow from "../assets/images/arrow left.png";
-import rightArrow from "../assets/images/arrow right.png";
+import leftArrow from "../assets/images/arrow-left.png";
+import rightArrow from "../assets/images/arrow-right.png";
 
 interface Slide {
   title: string;

@@ -1,10 +1,10 @@
+import "./App.css";
 import "./index.css";
- // ✅ Import data
-import AboutUs from "./pages/aboutUs";
-
+// import Router from "./routes";
 function App() {
   return (
-    <AboutUs />
+    <>
+    </>
   );
 }
 
