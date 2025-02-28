@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
-import HeroSection from "./components/HeroSection";
 
 export const router = createBrowserRouter(
   [
@@ -10,7 +9,7 @@ export const router = createBrowserRouter(
       children: [
         {    
             path: "/page2", 
-            element: <HeroSection /> 
+            element: <p>hello '/page2'</p> 
         },
       ],
     },
@@ -27,7 +26,6 @@ export const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: "/app" }
 );
 
 export default router;
