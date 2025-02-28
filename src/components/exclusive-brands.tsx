@@ -4,8 +4,8 @@ import "swiper/swiper-bundle.css";
 import { useState, useRef, useEffect } from "react";
 import { Swiper as SwiperType } from "swiper";
 
-import leftArrow from "../assets/images/arrow left.png";
-import rightArrow from "../assets/images/arrow right.png";
+import leftArrow from "../assets/images/arrow-left.png";
+import rightArrow from "../assets/images/arrow-right.png";
 
 import leonardsBg from "../assets/images/leonards-bg.png";
 import leonardsLogo from "../assets/images/leonards-logo.png";
