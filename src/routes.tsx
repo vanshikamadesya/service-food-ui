@@ -3,6 +3,8 @@ import AppLayout from "./Layouts/AppLayout";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import AboutUs from "./pages/aboutUs";
+import ContactUsPage from "./pages/ContactUsPage";
+import VideoPage from "./pages/VideoPage";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +19,15 @@ export const router = createBrowserRouter([
         path: "/about",
         element: <AboutUs />
       },
+      {
+        path: "/contact",
+        element: <ContactUsPage />,
+      },
+      {
+        path: "/video",
+        element: <VideoPage />,
+      },
+
       {
         path: "/product",
         element: <ProductPage />,
