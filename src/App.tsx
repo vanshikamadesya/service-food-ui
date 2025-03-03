@@ -1,11 +1,9 @@
+import "./App.css";
 import "./index.css";
-import OncePlace from "./components/once-place";
-
 
 function App() {
   return (
     <>
-      <OncePlace />
     </>
   );
 }
