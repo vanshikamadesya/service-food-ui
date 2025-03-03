@@ -51,11 +51,11 @@ const ArticleList: React.FC<ArticleListProps> = ({
       </div>
 
       {/* Articles Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-20 max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-10 max-w-6xl mx-auto">
         {articles.map((article, index) => (
           <div key={index} className="flex flex-col">
             {/* Media (Image or Video) */}
-            <div className="relative w-full h-[320px] rounded-lg overflow-hidden shadow-lg">
+            <div className="relative w-full h-[180px] sm:h-[320px] rounded-lg overflow-hidden shadow-lg">
               {article.isVideo ? (
                 <video
                   ref={(el) => setVideoRef(el, index)}
@@ -84,14 +84,16 @@ const ArticleList: React.FC<ArticleListProps> = ({
             </div>
 
             {/* Title & Description */}
-            <div className="mt-4 tracking-wide">
-              <h3 className="text-[#332D25] text-lg font-bold uppercase">{article.title}</h3>
-              <p className="text-[#332D25] text-sm mt-1">{article.description}</p>
+            <div className="mt-2 sm:mt-4 tracking-wide">
+              <h3 className="text-[#332D25] text-sm sm:text-lg font-bold uppercase">
+                {article.title}
+              </h3>
+              <p className="text-[#332D25] text-xs sm:text-sm mt-1">{article.description}</p>
             </div>
 
             {/* Read More Button */}
-            <div className="mt-4">
-              <button className="bg-[#86704D] text-white py-2 px-6 rounded-md hover:bg-[#6d5a3a] transition">
+            <div className="mt-2 sm:mt-4">
+              <button className="bg-[#86704D] text-white py-2 px-4 sm:py-2 sm:px-6 rounded-md hover:bg-[#6d5a3a] transition">
                 Read More
               </button>
             </div>
