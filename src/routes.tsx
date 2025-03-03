@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/aboutUs";
 import ContactUsPage from "./pages/ContactUsPage";
 import VideoPage from "./pages/VideoPage";
-import OurVideos from "./components/OurVideo";
+
 // import Demo from "./components/Demo";
 
 export const router = createBrowserRouter([
@@ -36,10 +36,7 @@ export const router = createBrowserRouter([
       // },
     ],
   },
-  {
-    path: "/video1",
-    element: <OurVideos />,
-  },
+
   {
     path: "/login",
     element: "", // Add the Login component here
