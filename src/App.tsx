@@ -1,5 +1,5 @@
 import "./index.css";
-import ExclusiveBrands from "./components/exclusive-brands";
+import ExclusiveBrands from "./components/ExclusiveBrands";
 
 
 function App() {
