@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/aboutUs";
 import ContactUsPage from "./pages/ContactUsPage";
 import VideoPage from "./pages/VideoPage";
+import OurVideos from "./components/OurVideo";
 // import Demo from "./components/Demo";
 
 export const router = createBrowserRouter([
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <AboutUs />
+        element: <AboutUs />,
       },
       {
         path: "/contact",
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       //   element:<Demo />,
       // },
     ],
+  },
+  {
+    path: "/video1",
+    element: <OurVideos />,
   },
   {
     path: "/login",
