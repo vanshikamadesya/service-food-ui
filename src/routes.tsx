@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
-import HomePage from "./pages/HomePage";
-import Maps from "./components/Maps";
+import ContactForm from "./components/ContactForms";
 
 export const router = createBrowserRouter(
   [
@@ -10,12 +9,8 @@ export const router = createBrowserRouter(
       element: <AppLayout />,
       children: [
         {    
-            path: "", 
-            element: <HomePage/>
-        },
-        {    
           path: "/maps", 
-          element: <Maps />
+          element: <ContactForm />
       },
       ],
     },
