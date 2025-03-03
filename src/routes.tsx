@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/aboutUs";
 import ContactUsPage from "./pages/ContactUsPage";
 import VideoPage from "./pages/VideoPage";
-import OncePlace from "./components/OncePlace";
+import ProductPage from "./pages/ProductPage";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +21,10 @@ export const router = createBrowserRouter([
         element: <AboutUs />
       },
       {
+        path: "/product",
+        element:<ProductPage />,
+      },
+      {
         path: "/contact",
         element: <ContactUsPage />,
       },
@@ -29,10 +33,6 @@ export const router = createBrowserRouter([
         element: <VideoPage />,
       },
 
-      {
-        path: "/product",
-        element:<OncePlace />,
-      },
     ],
   },
   {
