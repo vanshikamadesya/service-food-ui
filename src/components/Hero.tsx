@@ -64,15 +64,15 @@ const Hero: React.FC<HeroProps> = ({
       )}
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-40" />
+      <div className="absolute inset-0 bg-black bg-opacity-10 " />
 
       {/* Content */}
-      <div className="relative text-center text-white p-8 z-10">
-      <h1 className={`text-4xl md:text-6xl font-bold mb-4 ${className}`}>
+      <div className="relative text-center text-white p-8 z-10 md:mt-48">
+      <h1 className={`text-4xl md:text-7xl font-bold mb-4 ${className}`}>
           {title}
         </h1>
         {subtitle && (
-          <p className={`text-lg lg:text-lg mb-6 ${className}`}>{subtitle}</p>
+          <p className={`text-lg lg:text-2xl mb-6 ${className}`}>{subtitle}</p>
         )}
 
         {/* Render Children Here */}

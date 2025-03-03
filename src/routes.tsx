@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/aboutUs";
 import ContactUsPage from "./pages/ContactUsPage";
 import VideoPage from "./pages/VideoPage";
-import Demo from "./components/Demo";
+// import Demo from "./components/Demo";
 
 export const router = createBrowserRouter([
   {
@@ -29,10 +29,10 @@ export const router = createBrowserRouter([
         element: <VideoPage />,
       },
 
-      {
-        path: "/product",
-        element:<Demo />,
-      },
+      // {
+      //   path: "/product",
+      //   element:<Demo />,
+      // },
     ],
   },
   {
