@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
-import ContactForm from "./components/ContactUs";
+import ContactForm from "./components/ContactForm";
 
 export const router = createBrowserRouter(
   [
@@ -9,7 +9,7 @@ export const router = createBrowserRouter(
       element: <AppLayout />,
       children: [
         {    
-            path: "/contactUs/form", 
+            path: "/form", 
             element: <ContactForm />
         },
       ],
