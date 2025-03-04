@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
-import video from "../assets/images/video.mp4"; // Import video file
+import video from "../assets/images/video.mp4"; 
 
 const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -20,11 +20,11 @@ const VideoSection = () => {
   };
 
   return (
-    <section className="relative w-full  sm:h-[350px] md:h-[380px]  overflow-hidden">
+    <section className="relative w-full h-[250px] sm:h-[350px] md:h-[380px] overflow-hidden">
       {/* Video Background */}
       <video
         id="background-video"
-        className="absolute inset-0 w-full h-96 object-cover"
+        className="absolute inset-0 w-full h-96 md:h-full object-cover"
         src={video}
         muted
         loop
