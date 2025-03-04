@@ -4,7 +4,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
-import VideoCard from "../components/VCards"
+import VideoCard from "../components/VCards";
 import video from "../assets/images/video.mp4";
 
 const videos = [
@@ -54,7 +54,7 @@ const OurVideos = () => {
   };
 
   return (
-    <section className="bg-white w-full h-screen py-12 text-justify relative">
+    <section className="hidden md:block bg-white w-full h-screen py-12 text-justify relative">
       <div className="mx-auto px-8 md:px-12 lg:px-16">
         {/* Section Title */}
         <h2 className="text-2xl font-bold text-center text-[#3A342B]  uppercase tracking-wide">
@@ -93,10 +93,10 @@ const OurVideos = () => {
       {/* Custom Navigation Buttons */}
       <div className="absolute mr-32 py-28 right-10 flex gap-6">
         <button className="prev-btn  p-2 ">
-          <HiArrowNarrowLeft className="w-7 h-10 text-[#3A342B] " />
+          <HiArrowNarrowLeft className="w-12 h-10 text-[#3A342B] " />
         </button>
         <button className="next-btn   ">
-          <HiArrowNarrowRight className="w-7 h-10 text-[#3A342B] " />
+          <HiArrowNarrowRight className="w-12 h-10 text-[#3A342B] " />
         </button>
       </div>
     </section>
