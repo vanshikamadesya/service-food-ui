@@ -11,11 +11,10 @@ export const allCategories = [
 ];
 
 export const baseCatalogs = [
-  { title: "Beverages", image: BeveragesImg },
-  { title: "Frozen Foods", image: FrozenFoodsImg },
-  { title: "School Lunch", image: SchoolLunchImg },
-  { title: "International", image: AnnualImg },
+  { title: "Beverages", image: BeveragesImg, category: "EXCLUSIVE BRANDS" },
+  { title: "Frozen Foods", image: FrozenFoodsImg, category: "MONTHLY SPECIALS" },
+  { title: "School Lunch", image: SchoolLunchImg, category: "CUSTOMER SEGMENTS" },
+  { title: "International", image: AnnualImg, category: "EXCLUSIVE BRANDS" },
 ];
-
 
 export const catalogs = Array(3).fill(baseCatalogs).flat();
