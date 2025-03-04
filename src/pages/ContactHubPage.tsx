@@ -1,10 +1,10 @@
 import ContentHub from "../components/ContactHub"
-import OurStories from "../components/OurStories"
+import OurStory from "../components/OurStories"
 const ContactHubPage = () => {
   return (
     <div>
       <ContentHub/>
-      <OurStories/>
+      <OurStory/>
     </div>
   )
 }
