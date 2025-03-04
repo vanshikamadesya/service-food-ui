@@ -5,7 +5,10 @@ export default {
     extend: {
       fontFamily: {
         inter: ["Inter", "sans-serif"],
+        dmSans: ["DM Sans", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
       },
+      
     },
   },
   plugins: [],

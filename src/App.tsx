@@ -1,6 +1,8 @@
 import "./App.css";
 import "./index.css";
-// import Router from "./routes";
+import ExclusiveBrands from "./components/ExclusiveBrands";
+
+
 function App() {
   return (
     <>
