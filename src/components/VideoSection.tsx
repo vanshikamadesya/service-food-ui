@@ -20,11 +20,11 @@ const VideoSection = () => {
   };
 
   return (
-    <section className="relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[600px] overflow-hidden">
+    <section className="relative w-full  sm:h-[350px] md:h-[380px]  overflow-hidden">
       {/* Video Background */}
       <video
         id="background-video"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-96 object-cover"
         src={video}
         muted
         loop
