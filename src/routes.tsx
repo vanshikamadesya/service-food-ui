@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <AboutUs />
+        element: <AboutUs />,
       },
       {
         path: "/product",
@@ -40,6 +40,7 @@ export const router = createBrowserRouter([
 
     ],
   },
+
   {
     path: "/login",
     element: "", // Add the Login component here
