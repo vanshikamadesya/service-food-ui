@@ -15,7 +15,7 @@ export const router = createBrowserRouter(
         {    
           path: "/product", 
           element: <ExclusiveBrands/>
-      },
+        },
 
       ],
     },
