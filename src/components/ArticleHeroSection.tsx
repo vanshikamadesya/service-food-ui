@@ -8,11 +8,11 @@ const ArticleHeroSection = () => {
         subtitle="LEADING BY EXAMPLE - CHEF NANCYE ON BREAKING BARRIERS AND BUILDING KITCHENS OF RESPECT"
         backgroundImage={ArticleImage}
         socialLinks={{
-            instagram: "https://www.instagram.com",
-            facebook: "https://www.facebook.com",
-            linkedin: "https://www.linkedin.com",
-          }}
-          className="md:mb-3 md:w-[1180px]  md:px-16  "
+          instagram: "https://www.instagram.com",
+          facebook: "https://www.facebook.com",
+          linkedin: "https://www.linkedin.com",
+        }}
+        className="md:mb-3 md:w-[1180px]  md:px-16  "
       ></Hero>
     </div>
   );
