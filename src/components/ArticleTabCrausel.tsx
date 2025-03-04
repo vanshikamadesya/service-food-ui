@@ -1,47 +1,56 @@
-import React, { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 // Import your assets
-import leftArrow from '../assets/images/arrow-left.png';
-import rightArrow from '../assets/images/arrow-right.png';
-import sampleImage1 from '../assets/images/ArticleP/Meatballs Banner.png'; // Replace with your actual image paths
-import sampleImage2 from '../assets/images/ArticleP/Meatballs Banner.png';
-import sampleImage3 from '../assets/images/ArticleP/Meatballs Banner.png';
+// import leftArrow from "../assets/images/arrow-left.png";
+// import rightArrow from "../assets/images/arrow-right.png";
+import sampleImage1 from "../assets/images/ArticleP/Meatballs Banner.png"; 
+import sampleImage2 from "../assets/images/ArticleP/Meatballs Banner.png";
+import sampleImage3 from "../assets/images/ArticleP/Meatballs Banner.png";
 
 // Sample data for slider items
 const sliderData = [
   {
     id: 1,
     title: "Lorem ipsum dolor sit amet consectetur.",
-    subtitle: "Posuere nibh lorem feugiat nisl magna amet turpis adipiscing. Facilisi sed vitae.",
-    description: "This slide demonstrates content positioned at the left side with an image on the right taking up 30% of the screen width.",
+    subtitle:
+      "Posuere nibh lorem feugiat nisl magna amet turpis adipiscing. Facilisi sed vitae.",
+    description:
+      "This slide demonstrates content positioned at the left side with an image on the right taking up 30% of the screen width.",
     image: sampleImage1,
     position: "left",
     author: "Renato",
-    quote: "Lorem ipsum dolor sit amet consectetur. Morbi sagittis in orci vulputate lacus tristique posuere eu."
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Morbi sagittis in orci vulputate lacus tristique posuere eu.",
   },
   {
     id: 2,
     title: "Lorem ipsum dolor sit amet consectetur.",
-    subtitle: "Posuere nibh lorem feugiat nisl magna amet turpis adipiscing. Facilisi sed vitae.",
-    description: "This slide has centered content with images on both the left and right sides, each taking up 30% of the screen width.",
+    subtitle:
+      "Posuere nibh lorem feugiat nisl magna amet turpis adipiscing. Facilisi sed vitae.",
+    description:
+      "This slide has centered content with images on both the left and right sides, each taking up 30% of the screen width.",
     imageLeft: sampleImage2,
     imageRight: sampleImage3,
     position: "center",
     author: "Renato",
-    quote: "Lorem ipsum dolor sit amet consectetur. Morbi sagittis in orci vulputate lacus tristique posuere eu."
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Morbi sagittis in orci vulputate lacus tristique posuere eu.",
   },
   {
     id: 3,
     title: "Lorem ipsum dolor sit amet consectetur.",
-    subtitle: "Posuere nibh lorem feugiat nisl magna amet turpis adipiscing. Facilisi sed vitae.",
-    description: "This slide demonstrates content positioned at the right side with an image on the left taking up 30% of the screen width.",
+    subtitle:
+      "Posuere nibh lorem feugiat nisl magna amet turpis adipiscing. Facilisi sed vitae.",
+    description:
+      "This slide demonstrates content positioned at the right side with an image on the left taking up 30% of the screen width.",
     image: sampleImage1,
     position: "right",
     author: "Renato",
-    quote: "Lorem ipsum dolor sit amet consectetur. Morbi sagittis in orci vulputate lacus tristique posuere eu."
-  }
+    quote:
+      "Lorem ipsum dolor sit amet consectetur. Morbi sagittis in orci vulputate lacus tristique posuere eu.",
+  },
 ];
 
 interface CarouselSliderProps {
@@ -68,26 +77,24 @@ const CarouselSlider: React.FC<CarouselSliderProps> = ({ className }) => {
     setActiveIndex(swiper.activeIndex);
   };
 
-  const renderSlide = (item: typeof sliderData[0]) => {
-    if (item.position === 'left') {
+  const renderSlide = (item: (typeof sliderData)[0]) => {
+    if (item.position === "left") {
       return (
         <div className="flex flex-row w-full h-[60vh]">
           {/* Content - Left aligned */}
           <div className="w-[70%] bg-[#D9D9D959] flex items-center place-content-end pr-20 text-right">
-          <div className="ml-[15%] max-w-xl text-right">
+            <div className="ml-[15%] max-w-xl text-right">
               <h1 className="text-4xl font-medium text-[#3A342B] mb-4 text-right leading-tight">
                 {item.title}
               </h1>
-              <p className="text-xl text-gray-700  mb-6">
-                {item.subtitle}
-              </p>
+              <p className="text-xl text-gray-700  mb-6">{item.subtitle}</p>
               <div className="mt-8 text-right">
                 <p className="text-lg font-medium">{item.author}</p>
                 <p className="text-sm italic">{item.quote}</p>
               </div>
             </div>
           </div>
-          
+
           {/* Image - right side (30% width) */}
           <div className="w-[30%]">
             <img
@@ -98,7 +105,7 @@ const CarouselSlider: React.FC<CarouselSliderProps> = ({ className }) => {
           </div>
         </div>
       );
-    } else if (item.position === 'center') {
+    } else if (item.position === "center") {
       return (
         <div className="flex flex-row w-full h-[60vh]">
           {/* Image - left side (30% width) */}
@@ -109,23 +116,21 @@ const CarouselSlider: React.FC<CarouselSliderProps> = ({ className }) => {
               className="w-full h-full object-cover"
             />
           </div>
-          
+
           {/* Content - center (40% width) */}
           <div className="w-[40%] bg-gray-100 flex items-center justify-center">
             <div className="text-center px-6">
               <h1 className="text-4xl font-medium text-gray-800 mb-4 leading-tight">
                 {item.title}
               </h1>
-              <p className="text-xl text-gray-700 mb-6">
-                {item.subtitle}
-              </p>
+              <p className="text-xl text-gray-700 mb-6">{item.subtitle}</p>
               <div className="mt-8">
                 <p className="text-lg font-medium">{item.author}</p>
                 <p className="text-sm italic max-w-md mx-auto">{item.quote}</p>
               </div>
             </div>
           </div>
-          
+
           {/* Image - right side (30% width) */}
           <div className="w-[30%]">
             <img
@@ -147,16 +152,14 @@ const CarouselSlider: React.FC<CarouselSliderProps> = ({ className }) => {
               className="w-full h-full object-cover"
             />
           </div>
-          
+
           {/* Content - right aligned */}
           <div className="w-[70%] bg-gray-100 flex items-center">
             <div className="ml-[10%] mr-[15%] max-w-xl">
               <h1 className="text-4xl font-medium text-gray-800 mb-4 leading-tight">
                 {item.title}
               </h1>
-              <p className="text-xl text-gray-700 mb-6">
-                {item.subtitle}
-              </p>
+              <p className="text-xl text-gray-700 mb-6">{item.subtitle}</p>
               <div className="mt-8">
                 <p className="text-lg font-medium">{item.author}</p>
                 <p className="text-sm italic">{item.quote}</p>
@@ -180,20 +183,15 @@ const CarouselSlider: React.FC<CarouselSliderProps> = ({ className }) => {
           className="w-full"
         >
           {sliderData.map((item) => (
-            <SwiperSlide key={item.id}>
-              {renderSlide(item)}
-            </SwiperSlide>
+            <SwiperSlide key={item.id}>{renderSlide(item)}</SwiperSlide>
           ))}
         </Swiper>
       </div>
-      
+
       {/* White bar below carousel with navigation */}
       <div className="w-full h-16 bg-white flex items-center justify-between px-16">
-        <div className="w-1/3">
-          {/* Progress indicators */}
-          
-        </div>
-        
+        <div className="w-1/3">{/* Progress indicators */}</div>
+
         {/* Navigation arrows on the right side */}
         <div className="flex justify-end space-x-6">
           <button
@@ -201,9 +199,27 @@ const CarouselSlider: React.FC<CarouselSliderProps> = ({ className }) => {
             className="focus:outline-none"
             aria-label="Previous slide"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 12H5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 19L5 12L12 5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M38 24H10"
+                stroke="black"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M24 38L10 24L24 10"
+                stroke="black"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
           <button
@@ -211,9 +227,27 @@ const CarouselSlider: React.FC<CarouselSliderProps> = ({ className }) => {
             className="focus:outline-none"
             aria-label="Next slide"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12H19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M12 5L19 12L12 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 24H38"
+                stroke="black"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M24 10L38 24L24 38"
+                stroke="black"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
         </div>
