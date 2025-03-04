@@ -57,7 +57,7 @@ const Hero: React.FC<HeroProps> = ({
         // Background Image
         backgroundImage && (
           <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center"
+            className="absolute inset-0 w-full h-screen bg-cover bg-center"
             style={{ backgroundImage: `url(${backgroundImage})` }}
           />
         )
