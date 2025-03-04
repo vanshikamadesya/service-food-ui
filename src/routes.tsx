@@ -6,6 +6,7 @@ import AboutUs from "./pages/aboutUs";
 import ContactUsPage from "./pages/ContactUsPage";
 import VideoPage from "./pages/VideoPage";
 import ProductPage from "./pages/ProductPage";
+import MoreArticle from "./components/MoreArticle";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: "/video",
         element: <VideoPage />,
+      },
+      {
+        path: "/page2",
+        element: <MoreArticle />,
       },
 
     ],
