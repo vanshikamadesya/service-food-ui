@@ -54,7 +54,7 @@ const OurVideos = () => {
   };
 
   return (
-    <section className="bg-white w-full py-12 text-justify relative">
+    <section className="bg-white w-full h-screen py-12 text-justify relative">
       <div className="mx-auto px-8 md:px-12 lg:px-16">
         {/* Section Title */}
         <h2 className="text-2xl font-bold text-center text-[#3A342B]  uppercase tracking-wide">
