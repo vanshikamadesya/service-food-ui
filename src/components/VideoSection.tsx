@@ -34,7 +34,7 @@ const VideoSection = () => {
       <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
 
       {/* Content - Left Side */}
-      <div className="absolute left-5 sm:left-10 top-1/2 transform -translate-y-1/2 text-white max-w-[90%] sm:max-w-md p-4 sm:p-0">
+      <div className="absolute left-5 ml-24 sm:left-10 top-1/2 transform -translate-y-1/2 text-white max-w-[90%] sm:max-w-md p-4 sm:p-0">
         <p className="text-sm sm:text-lg md:text-xl leading-tight sm:leading-normal">
           Lorem Ipsum is simply dummy text of the printing and type setting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -47,7 +47,7 @@ const VideoSection = () => {
 
       {/* Play/Pause Button - Right Side (Adjusted for Mobile) */}
       <button
-        className="absolute right-5 sm:right-10 sm:top-1/2 sm:transform sm:-translate-y-1/2 
+        className="absolute right-5  mr-20 sm:right-10 sm:top-1/2 sm:transform sm:-translate-y-1/2 
         bg-white/30 text-white p-3 sm:p-4 rounded-full shadow-lg hover:bg-white/50 transition"
         onClick={togglePlay}
       >
