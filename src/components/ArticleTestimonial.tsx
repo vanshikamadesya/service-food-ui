@@ -1,6 +1,5 @@
 import React from 'react';
 import women from '../assets/images/ArticleP/Women.png';
-import meatBall from '../assets/images/ArticleP/Meatballs Banner.png';
 import droplet from '../assets/images/ArticleP/droplet.png';
 import CarouselSlider from '../components/ArticleTabCrausel'
 

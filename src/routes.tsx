@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import AppLayout from "./Layouts/AppLayout";
 import HomePage from "./pages/HomePage";
-import ProductPage from "./pages/ProductPage";
 import AboutUs from "./pages/aboutUs";
-import TestimonialSection from "./components/ArticleTestimonial";
-import ArticleSlider from "./components/ArticleTabCrausel";
+import ContactUsPage from "./pages/ContactUsPage";
+import VideoPage from "./pages/VideoPage";
+import ProductPage from "./pages/ProductPage";
+import ContactHubPage from "./pages/ContactHubPage";
+import ArticlePage from "./pages/ArticlePage";
 
 export const router = createBrowserRouter([
   {
@@ -17,22 +19,32 @@ export const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <AboutUs />
+        element: <AboutUs />,
       },
       {
         path: "/product",
-        element: <ProductPage />,
+        element:<ProductPage />,
       },
+      {
+        path: "/content",
+        element: <ContactHubPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactUsPage />,
+      },
+      {
+        path: "/video",
+        element: <VideoPage />,
+      }, 
       {
         path: "/article",
-        element: <TestimonialSection />,
+        element: <ArticlePage />,
       },
-      {
-        path: "/article/s",
-        element: <ArticleSlider />,
-      },
+
     ],
   },
+
   {
     path: "/login",
     element: "", // Add the Login component here

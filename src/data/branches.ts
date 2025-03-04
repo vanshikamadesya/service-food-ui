@@ -1,0 +1,7 @@
+export const branches = [
+  "HAMILTON PRODUCE",
+  "CHRISTCHURCH/CANTERBURY",
+  "AUCKLAND FOODSERVICE",
+  "TARANAKI",
+  "GREYMOUTH",
+];
