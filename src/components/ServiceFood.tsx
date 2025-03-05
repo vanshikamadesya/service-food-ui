@@ -1,8 +1,15 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import Button from "./Button";
+import { Option } from "../data/ServiceFood";
 
-const ServiceFood = () => {
+interface ServiceFoodProps {
+  title: string;
+  businessOptions: Option[];
+  regionOptions: Option[];
+}
+
+const ServiceFood: React.FC<ServiceFoodProps> = ({ title, businessOptions, regionOptions }) => {
   const [selectedBusinessOption, setSelectedBusinessOption] = useState("");
   const [selectedRegionOption, setSelectedRegionOption] = useState("");
   const [isBusinessDropdownOpen, setIsBusinessDropdownOpen] = useState(false);
@@ -43,11 +50,11 @@ const ServiceFood = () => {
     const handleClickOutside = (e: MouseEvent) => {
       const isBusinessDropdownClicked = businessDropdownRef.current?.contains(e.target as Node);
       const isRegionDropdownClicked = regionDropdownRef.current?.contains(e.target as Node);
-      
+
       if (!isBusinessDropdownClicked && !isRegionDropdownClicked) {
         setIsBusinessDropdownOpen(false);
         setIsRegionDropdownOpen(false);
-        
+
         setIsContentVisible(prev => !prev);
       }
     };
@@ -63,12 +70,12 @@ const ServiceFood = () => {
     <div ref={containerRef}>
       <div className="bg-[#efebe7] py-20 px-6 sm:px-8 relative font-inter">
         <div className="max-w-screen-lg mx-auto text-center w-full">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold  sm:mb-14 font-sans">
-            Is Service Foods For Me?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold sm:mb-14 font-sans">
+            {title}
           </h2>
 
           {/* Input Fields with Dropdown */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 justify-center mb-9 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 justify-center mb-9">
             {/* Business Type Dropdown */}
             <div className="flex flex-col text-left max-w-[450px] w-full mx-auto">
               <label
@@ -93,34 +100,18 @@ const ServiceFood = () => {
                 {/* Dropdown content */}
                 {isBusinessDropdownOpen && (
                   <div className="bg-white shadow-md w-full rounded-b-xl border-2 border-t-0 border-gray-600 z-10 absolute">
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleBusinessSelect("Restaurant");
-                      }}
-                      className="p-3 pl-5 hover:bg-gray-100 cursor-pointer text-lg sm:text-xl"
-                    >
-                      Restaurant
-                    </div>
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleBusinessSelect("Cafe");
-                      }}
-                      className="p-3 pl-5 hover:bg-gray-100 cursor-pointer text-lg sm:text-xl"
-                    >
-                      Cafe
-                    </div>
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleBusinessSelect("Bar");
-                      }}
-                      className="p-3 pl-5 hover:bg-gray-100 cursor-pointer text-lg sm:text-xl"
-                    >
-                      Bar
-                    </div>
-
+                    {businessOptions.map((option) => (
+                      <div
+                        key={option.value}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleBusinessSelect(option.value);
+                        }}
+                        className="p-3 pl-5 hover:bg-gray-100 cursor-pointer text-lg sm:text-xl"
+                      >
+                        {option.label}
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
@@ -150,34 +141,18 @@ const ServiceFood = () => {
                 {/* Dropdown content */}
                 {isRegionDropdownOpen && (
                   <div className="bg-white shadow-md w-full rounded-b-xl border-2 border-t-0 border-gray-600 z-10 absolute">
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleRegionSelect("Northland");
-                      }}
-                      className="p-3 pl-5 hover:bg-gray-100 cursor-pointer text-lg sm:text-xl"
-                    >
-                      Northland
-                    </div>
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleRegionSelect("Auckland");
-                      }}
-                      className="p-3 pl-5 hover:bg-gray-100 cursor-pointer text-lg sm:text-xl"
-                    >
-                      Auckland
-                    </div>
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleRegionSelect("Waikato");
-                      }}
-                      className="p-3 pl-5 hover:bg-gray-100 cursor-pointer text-lg sm:text-xl"
-                    >
-                      Waikato
-                    </div>
-
+                    {regionOptions.map((option) => (
+                      <div
+                        key={option.value}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleRegionSelect(option.value);
+                        }}
+                        className="p-3 pl-5 hover:bg-gray-100 cursor-pointer text-lg sm:text-xl"
+                      >
+                        {option.label}
+                      </div>
+                    ))}
                   </div>
                 )}
               </div>
