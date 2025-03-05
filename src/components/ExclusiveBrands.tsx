@@ -1,4 +1,5 @@
 import BrandSlider from "./BrandSlider";
+import ErrorBoundary from "../components/ErrorBoundary";
 import { brands } from "../data/brandData";
 
 const ExclusiveBrands = () => {
@@ -9,8 +10,9 @@ const ExclusiveBrands = () => {
       </h2>
       <div className="w-36 h-[2px] bg-[#3A342B] mt-2 mb-6 mx-auto"></div>
 
-      {/* Brand Slider Component */}
-      <BrandSlider brands={brands} />
+      <ErrorBoundary>
+        <BrandSlider brands={brands} />
+      </ErrorBoundary>
     </div>
   );
 };
