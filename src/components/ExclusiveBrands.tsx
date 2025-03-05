@@ -15,4 +15,4 @@ const ExclusiveBrands = () => {
   );
 };
 
-export default ExclusiveBrands;
+export default ExclusiveBrands; 
