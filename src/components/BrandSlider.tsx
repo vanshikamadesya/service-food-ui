@@ -2,9 +2,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import { useRef, useEffect, useCallback, memo } from "react";
-import { Swiper as SwiperType, SwiperEvents } from "swiper";
+import { Swiper as SwiperType } from "swiper";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 
+// Types
 interface Brand {
   name: string;
   description: string;
@@ -16,6 +17,7 @@ interface BrandSliderProps {
   brands: Brand[];
 }
 
+// Constants
 const SLIDER_CONFIG = {
   mobile: {
     slidesPerView: 1.2,
@@ -29,7 +31,7 @@ const SLIDER_CONFIG = {
     }
   },
   desktop: {
-    slidesPerView: 3.4,
+    slidesPerView: 3.3,
     spaceBetween: 20,
     centeredSlides: false,
     loop: false,
@@ -37,9 +39,10 @@ const SLIDER_CONFIG = {
   }
 } as const;
 
+// Subcomponents
 const BrandCard = memo(({ brand }: { brand: Brand }) => (
-  <div className="slide-content transition-all duration-300 h-[580px]">
-    <div className="bg-[#EFEBE7]  shadow-lg mt-8 rounded-xl overflow-hidden flex flex-col mx-0 md:mx-0">
+  <div className="slide-content h-[550px] transition-all duration-300">
+    <div className="bg-[#EFEBE7] shadow-lg mt-8 rounded-xl overflow-hidden flex flex-col mx-0 md:mx-0">
       <div
         className="relative h-40 sm:h-[200px] bg-cover bg-center"
         style={{ backgroundImage: `url(${brand.bgImage})` }}
@@ -78,7 +81,7 @@ const CardActions = memo(() => (
 ));
 
 const NavigationButtons = memo(({ onPrev, onNext }: { onPrev: () => void; onNext: () => void }) => (
-  <div className="hidden md:flex absolute mr-20 right-16 gap-4 justify-end text-[#3A342B]">
+  <div className="hidden md:flex absolute mr-20  right-16 gap-4 justify-end text-[#3A342B]">
     <button
       onClick={onPrev}
       className="p-2 rounded-full transition duration-300 hover:bg-gray-100"
@@ -96,6 +99,7 @@ const NavigationButtons = memo(({ onPrev, onNext }: { onPrev: () => void; onNext
   </div>
 ));
 
+// Main Component
 const BrandSlider: React.FC<BrandSliderProps> = ({ brands }) => {
   const swiperRef = useRef<SwiperType | null>(null);
 
@@ -148,7 +152,7 @@ const BrandSlider: React.FC<BrandSliderProps> = ({ brands }) => {
     const swiper = swiperRef.current;
     if (!swiper) return;
 
-    const events: (keyof SwiperEvents)[] = ["slideChange", "transitionEnd", "resize"];
+    const events = ["slideChange", "transitionEnd", "resize"];
     events.forEach(event => swiper.on(event, updateBlur));
     window.addEventListener("resize", updateBlur);
 
@@ -165,7 +169,7 @@ const BrandSlider: React.FC<BrandSliderProps> = ({ brands }) => {
   }, [updateBlur]);
 
   return (
-    <div className="relative w-full mx-auto md:pl-16 pr-0 mb-7">
+    <div className="relative w-full h-[600px] mx-auto md:pl-16 pr-0 mb-7">
       <div className="px-0 sm:px-0 relative">
         <Swiper
           onSwiper={(swiper) => {
