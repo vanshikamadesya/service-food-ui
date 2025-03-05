@@ -1,4 +1,4 @@
-import BgImage from "../components/HomeContent/BgImage";
+import HomeHeroSection from "../components/HomeHeroSection";
 import LoremText from "../components/HomeContent/LoremText";
 import Dropdown from "../components/HomeContent/Dropdown";
 import Icon from "../components/HomeContent/Icon";
@@ -6,7 +6,7 @@ import Icon from "../components/HomeContent/Icon";
 const HomePage = () => {
   return (
     <>
-      <BgImage />
+      <HomeHeroSection />
       <LoremText />
       <Dropdown />
       <Icon />
