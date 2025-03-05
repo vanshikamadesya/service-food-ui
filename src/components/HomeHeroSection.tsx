@@ -1,27 +1,13 @@
-import { useState, useEffect } from "react";
-import homeVideo from "../assets/images/HomepageVideo.mp4";
-import Button from "./Button";
+import React, { useState, useEffect } from 'react';
+import Button from './Button'; 
+import { Slide } from '../data/home';
 
-const slides = [
-  {
-    dynamicTitle: "Chef",
-    subtitle: "Providing top-quality ingredients and supplies",
-  },
-  {
-    dynamicTitle: "Restaurant",
-    subtitle: "Supporting local cafes, restaurants, and franchises",
-  },
-  {
-    dynamicTitle: "Pastry Shop",
-    subtitle: "Delivering fresh and quality products nationwide",
-  },
-  {
-    dynamicTitle: "Takeaway",
-    subtitle: "Decades of partnerships with leading food brands",
-  },
-];
+interface HomeHeroSectionProps {
+  slides: Slide[];
+  videoSrc: string;
+}
 
-const HomeHeroSection = () => {
+const HomeHeroSection: React.FC<HomeHeroSectionProps> = ({ slides, videoSrc }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -30,7 +16,7 @@ const HomeHeroSection = () => {
     }, 1500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   return (
     <div className="relative w-full h-screen overflow-hidden flex justify-start items-center pl-10 md:pl-20 lg:pl-32 font-inter">
@@ -43,7 +29,7 @@ const HomeHeroSection = () => {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src={homeVideo} type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
@@ -63,7 +49,6 @@ const HomeHeroSection = () => {
 
         {/* Subtitle */}
         <p className="text-lg sm:text-xl md:text-2xl mt-4 max-w-[700px]">
-          {/* {slides[currentIndex].subtitle} */}
           {slides[currentIndex].subtitle
             .split(" ")
             .slice(
