@@ -1,5 +1,5 @@
 import BgImage from "../components/HomeContent/BgImage";
-import LoremText from "../components/HomeContent/LoremText";
+import Servicefood from "../components/ServiceFood";
 import Dropdown from "../components/HomeContent/Dropdown";
 import Icon from "../components/HomeContent/Icon";
 
@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <>
       <BgImage />
-      <LoremText />
+      <Servicefood />
       <Dropdown />
       <Icon />
     </>
