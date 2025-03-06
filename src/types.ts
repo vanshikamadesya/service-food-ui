@@ -7,3 +7,7 @@ export interface TimelineItem {
 export interface TimelineProps {
   items: TimelineItem[];
 }
+
+export interface VideoSectionProps {
+  isVideo?: boolean;
+}
