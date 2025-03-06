@@ -40,21 +40,19 @@ const VideoSection: React.FC<VideoSectionProps> = ({ isVideo = false }) => {
         />
       )}
 
-      {/* Dark Overlay */}
+
       <div className="absolute inset-0 "></div>
 
       {/* Content */}
       <div className="absolute w-full h-full flex items-end justify-center pb-10 md:items-center md:justify-start px-6 sm:px-10 lg:px-16">
         <div className="max-w-[90%] sm:max-w-lg text-white text-center md:text-left">
-          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold leading-snug">
-            Lorem Ipsum Dolor Sit Dolor Sit Siquament
-          </h2>
+         
           <p className="text-sm sm:text-base md:text-lg mt-2 sm:mt-4 leading-relaxed">
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500s.
           </p>
-          <button className="mt-4 px-5 py-2 bg-white text-black rounded-md shadow-lg">
+          <button className="mt-4 w-[80%] md:w-auto px-5 py-2 bg-white text-black rounded-md shadow-lg">
             Learn More
           </button>
         </div>
