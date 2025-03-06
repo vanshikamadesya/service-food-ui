@@ -22,19 +22,16 @@ const Accordion: React.FC<AccordionProps> = ({ title, content, isOpen, onClick }
 
   return (
     <div className="w-full">
-      {/* Accordion Header */}
       <div className="flex justify-between items-center w-full">
         <h2 className="text-xl sm:text-2xl font-bold text-black">{title}</h2>
-        <button onClick={onClick} className="ml-2 ">
+        <button onClick={onClick} className="ml-2">
           {isOpen ? (
-            <HiOutlineChevronUp className="text-3xl   text-[#86704D]" />
+            <HiOutlineChevronUp className="text-3xl text-[#86704D]" />
           ) : (
             <HiOutlineChevronDown className="text-3xl text-[#86704D]" />
           )}
         </button>
       </div>
-
-      {/* Accordion Content with smooth transition */}
       <div
         className={`overflow-hidden mt-5 text-[#3A342B] text-base sm:text-lg transition-all duration-500 ease-in-out`}
         style={{ maxHeight }}
@@ -47,7 +44,6 @@ const Accordion: React.FC<AccordionProps> = ({ title, content, isOpen, onClick }
           </button>
         </div>
       </div>
-
       <hr className={`border-t-4 border-[#86704D] w-full my-4 transition-transform duration-500 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-1/2'}`} />
     </div>
   );

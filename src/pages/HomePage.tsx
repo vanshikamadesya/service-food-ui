@@ -1,6 +1,6 @@
 import BgImage from "../components/HomeContent/BgImage";
 import LoremText from "../components/HomeContent/LoremText";
-import Dropdown from "../components/HomeDropdown";
+import DropdownIndex from "../components/HomeDropdown/index";
 import Icon from "../components/HomeContent/Icon";
 
 const HomePage = () => {
@@ -8,7 +8,7 @@ const HomePage = () => {
     <>
       <BgImage />
       <LoremText />
-      <Dropdown />
+      <DropdownIndex />
       <Icon />
     </>
   );
