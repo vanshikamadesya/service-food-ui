@@ -1,79 +1,113 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
-import videoSrc from "../assets/images/video.mp4"; // Import video file
-import imageSrc from "../assets/images/Quail eggs.png"; // Import image file (fallback)
-import { VideoSectionProps } from "../types";
 
+export interface VideoSectionData {
+  title: string;
+  subtitle: string;
+  mainVideo: string;
+  description1: string;
+  description2: string;
+  previewThumbnail: {
+    src: string;
+    alt: string;
+  };
+  secondaryThumbnail: {
+    src: string;
+    alt: string;
+  };
+  imgDescription1: string;
+  imgDescription2: string;
+}
 
-const VideoSection: React.FC<VideoSectionProps> = ({ isVideo = false }) => {
+const VideoSection: React.FC<VideoSectionData> = ({
+  title,
+  subtitle,
+  mainVideo,
+  description1,
+  description2,
+  previewThumbnail,
+  secondaryThumbnail,
+  imgDescription1,
+  imgDescription2,
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const togglePlay = useCallback(() => {
+  const togglePlay = () => {
     if (videoRef.current) {
       if (isPlaying) {
         videoRef.current.pause();
       } else {
         videoRef.current.play();
       }
-      setIsPlaying((prev) => !prev);
+      setIsPlaying(!isPlaying);
     }
-  }, [isPlaying]);
+  };
 
   return (
-    <section className="relative w-full h-[500px] md:h-96 overflow-hidden">
-      {/* Background (Image is default, Video optional) */}
-      {isVideo ? (
-        <video
-          ref={videoRef}
-          id="background-video"
-          className="absolute inset-0 w-full h-full object-cover"
-          src={videoSrc}
-          muted
-          loop
-        />
-      ) : (
-        <img
-          src={imageSrc}
-          alt="Background"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-      )}
+    <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 right-7 py-10 text-[#3A342B] font-inter">
+      {/* Heading (Centered) */}
+      <div className="text-center">
+        <h1 className="text-2xl md:text-4xl font-bold text-[#4C3525]">
+          {title}
+        </h1>
+      </div>
 
+      <p className="mt-6 md:px-72 md:mb-20 sm:px-3 md:tracking-widest w-full text-sm md:text-base text-left opacity-80">
+        {subtitle}
+      </p>
 
-      <div className="absolute inset-0 "></div>
+      {/* Main Video Section */}
+      <div className="relative mt-6 w-full">
+        <video ref={videoRef} className="w-full rounded-lg" src={mainVideo} />
+        {/* Play/Pause Button */}
+        <button
+          onClick={togglePlay}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          {isPlaying ? (
+            <FaPause className="text-white text-3xl md:text-5xl bg-black bg-opacity-50 p-3 rounded-full" />
+          ) : (
+            <FaPlay className="text-white text-3xl md:text-5xl bg-black bg-opacity-50 p-3 rounded-full" />
+          )}
+        </button>
+      </div>
 
-      {/* Content */}
-      <div className="absolute w-full h-full flex items-end justify-center pb-10 md:items-center md:justify-start px-6 sm:px-10 lg:px-16">
-        <div className="max-w-[90%] sm:max-w-lg text-white text-center md:text-left">
-         
-          <p className="text-sm sm:text-base md:text-lg mt-2 sm:mt-4 leading-relaxed">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
-          </p>
-          <button className="mt-4 w-[80%] md:w-auto px-5 py-2 bg-white text-black rounded-md shadow-lg">
-            Learn More
+      {/* Video Descriptions */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <p className="text-sm md:text-base  text-left lg:pl-28 py-6 tracking-wide">
+          {description1}
+        </p>
+        <p className="text-sm md:text-base text-left px-8 py-6 lg:pr-24 tracking-wide">
+          {description2}
+        </p>
+      </div>
+
+      {/* Video Thumbnails */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 max-w-[85%] mx-auto">
+        <div className="relative w-full">
+          <img src={previewThumbnail.src} alt={previewThumbnail.alt} className="w-full rounded-lg" />
+          <button className="absolute inset-0 flex items-center justify-center">
+            <FaPlay className="text-white text-3xl md:text-5xl bg-black bg-opacity-50 p-3 rounded-full" />
+          </button>
+        </div>
+        <div className="relative w-full">
+          <img src={secondaryThumbnail.src} alt={secondaryThumbnail.alt} className="w-full rounded-lg" />
+          <button className="absolute inset-0 flex items-center justify-center">
+            <FaPlay className="text-white text-3xl md:text-5xl bg-black bg-opacity-50 p-3 rounded-full" />
           </button>
         </div>
       </div>
 
-      {/* Play/Pause Button (Only for Video) */}
-      {isVideo && (
-        <button
-          className="absolute right-5 bottom-5 md:right-10 md:top-1/2 md:-translate-y-1/2 
-          bg-white/30 text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-white/50 transition"
-          onClick={togglePlay}
-          aria-label={isPlaying ? "Pause video" : "Play video"}
-        >
-          {isPlaying ? (
-            <FaPause className="w-5 h-5 md:w-6 md:h-6" />
-          ) : (
-            <FaPlay className="w-5 h-5 md:w-6 md:h-6" />
-          )}
-        </button>
-      )}
-    </section>
+      <div className="grid grid-cols-1 font-light italic md:grid-cols-2 gap-6 mt-1">
+        <p className="text-sm md:text-base  text-left lg:pl-28  tracking-wide">
+          {imgDescription1}
+        </p>
+        <p className="text-sm md:text-base text-left px-8  lg:pr-24 tracking-wide">
+          {imgDescription2}
+        </p>
+      </div>
+    </div>
   );
 };
 
