@@ -1,112 +1,124 @@
 import foodserviceMaps from "../assets/images/ContactUs/foodserviceMaps.png"; // ✅ Correct way
 
-
-
-
 export interface BranchInfo {
   name: string;
   phone: string;
   email: string;
   address: string;
-  postal: string;
+  postal?: string;
   image?: string;
-  location: {
-    name: string;
-    rating: number;
-    reviewCount: number;
-    address: string;
-    status: string;
-    openingTime: string;
-  };
 }
 
 export const branches = [
+  "NATIONAL SUPPORT OFFICE",
   "HAMILTON PRODUCE",
-  "CHRISTCHURCH/CANTERBURY",
   "AUCKLAND FOODSERVICE",
+  "CHRISTCHURCH/CANTERBURY",
   "TARANAKI",
-  "GREYMOUTH",
+  "AUCKLAND IMPORTS",
+  "NAPIER/HAWKES BAY",
+  "WESTPORT",
+  "AUCKLAND REPACKS",
+  "WELLINGTON (TE PĀTAKA)",
+  "GISBORNE/TAIRAWHITI",
+  "AUCKLAND LEONARD'S"
 ];
 
 export const branchData: Record<string, BranchInfo> = {
+  "NATIONAL SUPPORT OFFICE": {
+    name: "NATIONAL SUPPORT OFFICE",
+    phone: "+64 (09) 258 5010",
+    email: "OrdersAKL@servicefoods.co.nz",
+    address: "221 Ihumātao Road, Māngere, Auckland",
+    postal: "PO Box: 53050, Auckland Airport, Māngere",
+    image: foodserviceMaps,
+  },
   "HAMILTON PRODUCE": {
     name: "HAMILTON PRODUCE",
-    phone: "+64 (07) 849 3660",
-    email: "hamilton@servicefoods.co.nz",
-    address: "56 The Boulevard, Te Rapa, Hamilton",
-    postal: "PO Box 123, Hamilton",
-    image: undefined,
-    location: {
-      name: "Service Foods - Hamilton",
-      rating: 4.5,
-      reviewCount: 12,
-      address: "56 The Boulevard, Te Rapa",
-      status: "Open",
-      openingTime: "Closes 6pm",
-    },
-  },
-  "CHRISTCHURCH/CANTERBURY": {
-    name: "CHRISTCHURCH/CANTERBURY",
-    phone: "+64 (03) 348 3660",
-    email: "christchurch@servicefoods.co.nz",
-    address: "24 Edmonton Road, Hornby, Christchurch",
-    postal: "PO Box 456, Christchurch",
-    image: undefined,
-    location: {
-      name: "Service Foods - Christchurch",
-      rating: 4.6,
-      reviewCount: 8,
-      address: "24 Edmonton Road, Hornby",
-      status: "Closed",
-      openingTime: "Opens 5am Wed",
-    },
+    phone: "+64 (07) 981 2258",
+    email: "OrdersHAM@servicefoods.co.nz",
+    address: "36 Horotiu Road, Hamilton",
+    image: foodserviceMaps,
   },
   "AUCKLAND FOODSERVICE": {
     name: "AUCKLAND FOODSERVICE",
     phone: "+64 (09) 258 5010",
-    email: "EOrdersAKL@servicefoods.co.nz",
-    address: "221 Ihumatao Road, Mangere, Auckland",
-    postal: "PO Box 53050, Auckland Airport, Mangere",
+    email: "OrdersAKL@servicefoods.co.nz",
+    address: "221 Ihumātao Road, Māngere, Auckland",
+    postal: "PO Box: 53050, Auckland Airport, Māngere",
     image: foodserviceMaps,
-    location: {
-      name: "Service Foods - Auckland",
-      rating: 4.7,
-      reviewCount: 9,
-      address: "221 Ihumatao Road, Mangere",
-      status: "Closed",
-      openingTime: "Opens 4am Wed",
-    },
+  },
+  "CHRISTCHURCH/CANTERBURY": {
+    name: "CHRISTCHURCH/CANTERBURY",
+    phone: "+64 (03) 389 9909",
+    email: "OrdersCH@servicefoods.co.nz",
+    address: "220 Cumnor Terrace, Woolston, Christchurch",
+    postal: "PO Box: 7005, Sydenham, Christchurch",
+    image: foodserviceMaps,
   },
   "TARANAKI": {
     name: "TARANAKI",
-    phone: "+64 (06) 758 4330",
-    email: "taranaki@servicefoods.co.nz",
-    address: "32 Devon Street, New Plymouth",
-    postal: "PO Box 789, New Plymouth",
-    image: undefined,
-    location: {
-      name: "Service Foods - Taranaki",
-      rating: 4.3,
-      reviewCount: 6,
-      address: "32 Devon Street, New Plymouth",
-      status: "Open",
-      openingTime: "Closes 7pm",
-    },
+    phone: "+64 (06) 753 6107",
+    email: "OrdersTARA@servicefoods.co.nz",
+    address: "14 Saltash Street, Vogeltown, New Plymouth",
+    image: foodserviceMaps,
+  },
+  "AUCKLAND IMPORTS": {
+    name: "AUCKLAND IMPORTS",
+    phone: "+64 (09) 280 3100",
+    email: "OrdersAKL@servicefoods.co.nz",
+    address: "25 Aerovista Place, Wiri, Auckland",
+    postal: "PO Box: 53050, Auckland Airport, Māngere",
+    image: foodserviceMaps,
+  },
+  "NAPIER/HAWKES BAY": {
+    name: "NAPIER/HAWKES BAY",
+    phone: "+64 (06) 843 7779",
+    email: "OrdersNP@servicefoods.co.nz",
+    address: "12 Turner Place, Onekawa, Napier",
+    image: foodserviceMaps,
+  },
+  "WESTPORT": {
+    name: "WESTPORT",
+    phone: "+64 (03) 789 7577",
+    email: "OrdersWP@servicefoods.co.nz",
+    address: "15 Bentham Street, Westport",
+    image: foodserviceMaps,
+  },
+  "AUCKLAND REPACKS": {
+    name: "AUCKLAND REPACKS",
+    phone: "+64 (09) 280 3100",
+    email: "OrdersAKL@servicefoods.co.nz",
+    address: "18D Aerovista Place, Wiri, Auckland",
+    postal: "PO Box: 53050, Auckland Airport, Māngere",
+    image: foodserviceMaps,
+  },
+  "WELLINGTON (TE PĀTAKA)": {
+    name: "WELLINGTON (TE PĀTAKA)",
+    phone: "+64 (04) 586 2162",
+    email: "OrdersWN@servicefoods.co.nz",
+    address: "19 William Durant Drive, Upper Hutt, Wellington",
+    image: foodserviceMaps,
+  },
+  "GISBORNE/TAIRAWHITI": {
+    name: "GISBORNE/TAIRAWHITI",
+    phone: "+64 (06) 867 3599",
+    email: "OrdersGB@servicefoods.co.nz",
+    address: "21 Parkinson Street, Awapuni, Gisborne",
+    image: foodserviceMaps,
+  },
+  "AUCKLAND LEONARD'S": {
+    name: "AUCKLAND LEONARD'S",
+    phone: "0800 SAUSAGE (728 724)",
+    email: "Orders@leonards.co.nz",
+    address: "46 Greenmount Drive, East Tamaki, Auckland",
+    image: foodserviceMaps,
   },
   "GREYMOUTH": {
     name: "GREYMOUTH",
-    phone: "+64 (03) 768 9870",
-    email: "greymouth@servicefoods.co.nz",
-    address: "14 Boundary Street, Greymouth",
-    postal: "PO Box 321, Greymouth",
-    image: undefined,
-    location: {
-      name: "Service Foods - Greymouth",
-      rating: 4.2,
-      reviewCount: 5,
-      address: "14 Boundary Street, Greymouth",
-      status: "Closed",
-      openingTime: "Opens 6am Wed",
-    },
-  },
+    phone: "+64 (03) 768 7143",
+    email: "OrdersGM@servicefoods.co.nz",
+    address: "68 Alexander Street, Greymouth",
+    image: foodserviceMaps,
+  }
 };

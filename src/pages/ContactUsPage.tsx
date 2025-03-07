@@ -1,5 +1,5 @@
 import ContactForms from '../components/ContactForms'
-import Maps from '../components/Maps'
+import Maps from '../components/Maps/Maps'
 import Contactus from '../components/ContactUs'
 
 const ContactUsPage = () => {
