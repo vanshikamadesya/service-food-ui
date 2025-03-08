@@ -10,7 +10,7 @@ const ContactHubPage = () => {
       <ContentHub/>
       <VideoCarousel mainTitle="OUR STORIES" />
       <OurVideos/>
-      <VideoSection/>
+      <VideoSection />
       <Articles/>
     </div>
   )
