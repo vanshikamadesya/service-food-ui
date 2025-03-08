@@ -1,7 +1,8 @@
 import BgImage from "../components/HomeContent/BgImage";
 import LoremText from "../components/HomeContent/LoremText";
 import Dropdown from "../components/HomeContent/Dropdown";
-import Icon from "../components/HomeContent/Icon";
+import HomeIcon from "../components/HomeIcon";
+
 
 const HomePage = () => {
   return (
@@ -9,7 +10,7 @@ const HomePage = () => {
       <BgImage />
       <LoremText />
       <Dropdown />
-      <Icon />
+      <HomeIcon/>
     </>
   );
 };
