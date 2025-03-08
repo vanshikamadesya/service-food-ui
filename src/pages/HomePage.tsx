@@ -1,15 +1,13 @@
-import BgImage from "../components/HomeContent/BgImage";
-import LoremText from "../components/HomeContent/LoremText";
-import DropdownIndex from "../components/HomeDropdown/index";
-import Icon from "../components/HomeContent/Icon";
-import HomeSwiper from "../components/HomeSwiper";
+import ServiceFood from "../components/ServiceFood";
+import { slidesData } from "../data/ServiceFood";
 const HomePage = () => {
   return (
     <>
-      <BgImage />
-      <LoremText />
-      <DropdownIndex />
-      <Icon />
+      <ServiceFood
+        title={slidesData.title}
+        businessOptions={slidesData.businessOptions}
+        regionOptions={slidesData.regionOptions}
+      />
     </>
   );
 };
