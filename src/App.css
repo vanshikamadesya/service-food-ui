@@ -10,3 +10,9 @@ font {
   padding-left: 30px;
   background-size: 1.5em;
 }
+
+
+/* Add this in your styles.css or a relevant file */
+.transition-max-height {
+  transition: max-height 0.5s ease-in-out; /* Smooth transition for height */
+}
