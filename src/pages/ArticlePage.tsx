@@ -1,4 +1,3 @@
-// ArticlePage.tsx
 import ArticleHeroSection from '../components/ArticleHeroSection'
 import ArticlePreview from '../components/ArticlePreview'
 import MoreArticle from '../components/MoreArticle'
@@ -17,7 +16,10 @@ import videoFile from "../assets/images/video.mp4";
 const ArticlePage = () => {
   return (
     <div>
-      <ArticleHeroSection/>
+      <ArticleHeroSection
+        title="Maxine Sckeckter On Her Unique Take On Pastry"
+        subtitle="Leading By Example - Chef Nancye On Breaking Barriers And Building Kitchens Of Respect"
+      />
       <ArticlePreview
         introText="Lorem ipsum dolor sit amet consectetur. Libero eget ultrices varius volutpat non faucibus dui pretium sed. Justo lacus massa massa pellentesque et non. Vitae."
         paragraph1="Lorem ipsum dolor sit amet consectetur. Gravida ac ultrices proin est dolor sit. Egestas fringilla maecenas sed nunc quis magna mi diam sagittis. Ornare scelerisque non tellus amet tortor. Elit vel adipiscing luctus id habitant dui."

@@ -1,15 +1,15 @@
-import ContactForms from '../components/ContactForms'
-import Maps from '../components/Maps/Maps'
-import Contactus from '../components/ContactUs'
+import ContactForms from "../components/ContactForms";
+import Index from "../components/Contactus";
+import Maps from "../components/Maps/Maps";
 
 const ContactUsPage = () => {
   return (
     <div>
-        <Contactus/>
-      <ContactForms/>
-      <Maps/>
+      <Index/>
+      <ContactForms />
+      <Maps />
     </div>
-  )
-}
+  );
+};
 
-export default ContactUsPage
+export default ContactUsPage;

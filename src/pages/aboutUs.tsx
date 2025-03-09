@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css"; // Use this for all styles
+import "swiper/swiper-bundle.css"; 
 import { Pagination } from "swiper/modules";
 import videoImage from "../assets/images/bg-banner.jpg";
 import teamMembers from "../data/teamMembers";
@@ -30,18 +30,23 @@ function GreatChief() {
   );
 }
 
-const AboutUs: React.FC = () => {
+const AboutUs = () => {
+  // Define content inside the component
+  const title = "Behind Every Great Chef";
+  const subtitle =
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.";
+  const backgroundImage = videoImage;
+
   return (
     <div className="font-['Inter']">
       {/* Hero Section */}
-      <div>
-        <Hero
-          title="Behind Every Great Chef"
-          subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-          backgroundImage={videoImage}
-          className="md:text-left md:mr-[600px] md:px-44 tracking-wide   "
-        />
-      </div>
+      <Hero
+        title={title}
+        subtitle={subtitle}
+        backgroundImage={backgroundImage}
+        titleWidthPercent={50}
+        subtitleWidthPercent={38}
+      />
       <div className="flex justify-center items-center min-h-screen bg-[#EFEBE7]">
         <Timeline items={timelineData} />
       </div>

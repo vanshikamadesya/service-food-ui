@@ -33,11 +33,10 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, onSelect, className
   }, []);
 
   return (
-    <div ref={dropdownRef} className={`relative w-full max-w-md ${className}`}>
-      {/* Dropdown Button */}
+    <div ref={dropdownRef} className={`relative ${className}`}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex justify-between items-center w-full px-4 py-3 text-white bg-transparent/10 border border-white rounded-lg focus:outline-none sm:text-lg text-sm"
+        className="flex justify-between items-center w-full md:w-[480px] px-4 md:px-7 py-2 md:py-3 mt-2 md:mt-5 text-white bg-transparent/10 border border-white rounded-lg focus:outline-none text-sm md:text-lg"
       >
         {selected || label}
         <ChevronDown size={20} className="ml-2" />
@@ -45,12 +44,12 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, onSelect, className
 
       {/* Dropdown Menu */}
       {isOpen && (
-        <ul className="absolute left-0 mt-2 w-full bg-transparent/0 border border-white rounded-lg shadow-lg backdrop-blur-md sm:text-lg text-sm z-50">
+        <ul className="absolute left-0 mt-2 w-full bg-transparent/0 border border-white rounded-lg shadow-lg backdrop-blur-md text-sm md:text-lg z-50">
           {options.map((option, index) => (
             <li
               key={index}
               onClick={() => handleSelect(option)}
-              className="px-4 py-3 cursor-pointer text-white bg-transparent hover:bg-gray-200 hover:text-black transition"
+              className="px-4 py-2 md:py-3 cursor-pointer text-white bg-transparent hover:bg-gray-200 hover:text-black transition"
             >
               {option}
             </li>
