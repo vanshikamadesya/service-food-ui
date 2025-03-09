@@ -5,7 +5,7 @@ import AboutUs from "./pages/aboutUs";
 import ContactUsPage from "./pages/ContactUsPage";
 import VideoPage from "./pages/VideoPage";
 import ProductPage from "./pages/ProductPage";
-import ContactHubPage from "./pages/ContactHubPage";
+import ContactHubPage from "./pages/ContentHubPage";
 import ArticlePage from "./pages/ArticlePage";
 
 export const router = createBrowserRouter([
