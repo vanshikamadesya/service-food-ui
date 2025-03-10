@@ -32,3 +32,34 @@ font {
 .transition-max-height {
   transition: max-height 0.5s ease-in-out; /* Smooth transition for height */
 }
+
+/* Catalog Slider - Opacity styles for partial slides */
+
+/* Mobile view - non-active slides get opacity */
+.swiper-slide-opacity:not(.swiper-slide-active) {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+/* Desktop view - first and last visible slides get opacity effect */
+.desktop-swiper .swiper-slide-visible:first-child,
+.desktop-swiper .swiper-slide-visible:last-child {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+/* Base transition for all slides */
+.desktop-swiper .swiper-slide {
+  transition: opacity 0.3s ease;
+}
+
+/* Add opacity to slides at the edges that are partially visible */
+.desktop-swiper .swiper-slide-visible.desktop-slide:nth-last-child(-n+1):not(.swiper-slide-active) {
+  opacity: 0.4;
+}
+
+/* Hover effects to improve UX */
+.swiper-slide-opacity:hover,
+.desktop-swiper .swiper-slide:hover {
+  opacity: 0.8 !important;
+}
