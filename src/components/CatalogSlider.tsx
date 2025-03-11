@@ -17,18 +17,42 @@ interface CatalogSliderProps {
 
 const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) => {
   const [selectedCategory, setSelectedCategory] = useState("ALL CATALOGUES");
+  const [activeIndex, setActiveIndex] = useState(0);
+  // Track visible slide indexes for desktop view but not for filtering
+  const [visibleSlides, setVisibleSlides] = useState<number[]>([]);
 
   const filteredCatalogs =
     selectedCategory === "ALL CATALOGUES"
       ? catalogs
       : catalogs.filter((catalog) => catalog.category === selectedCategory);
+      
+  // Handle slide change and update visible slides
+  const handleSlideChange = (swiper) => {
+    setActiveIndex(swiper.activeIndex);
+    
+    // Calculate which slides are fully visible based on current view
+    const fullyVisibleSlides = [];
+    const visibleSlidesCount = swiper.params.slidesPerView;
+    
+    // partially visible slide
+    const fullSlides = Math.floor(visibleSlidesCount);
+    
+    // Add fully visible slides
+    for (let i = swiper.activeIndex; i < swiper.activeIndex + fullSlides; i++) {
+      if (i < filteredCatalogs.length) {
+        fullyVisibleSlides.push(i);
+      }
+    }
+    
+    setVisibleSlides(fullyVisibleSlides);
+  };
 
   return (
-    <div className="bg-gray-800 text-white py-16 md:py-24 md:pb-40 tracking-wide w-full overflow-hidden">
+    <div className="sm:bg-gray-800 bg-gray-700 text-white py-16 md:py-24 md:pb-40 tracking-wide w-full overflow-hidden">
       {/* Section Heading */}
       <div className="container mx-auto px-4">
         <h2 className="text-center text-xl sm:text-2xl font-semibold mb-2 text-white uppercase">
-          OUR CATALOGUES
+          OUR CATEGORIES
         </h2>
         <div className="w-20 h-0.5 bg-white mx-auto mb-8"></div>
 
@@ -37,14 +61,17 @@ const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) =
           {/* Small Screen Dropdown */}
           <div className="block sm:hidden w-full max-w-xs">
             <select
-              className="w-full px-4 py-3 rounded-full bg-transparent text-white border border-white text-center appearance-none"
+              className="w-full px-4 py-3 rounded-xl bg-transparent text-white border border-white text-center appearance-none"
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E\")", 
-                       backgroundPosition: "right 0.75rem center", 
-                       backgroundRepeat: "no-repeat",
-                       backgroundSize: "1.5em 1.5em",
-                       paddingRight: "2.5rem" }}
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E\")",
+                backgroundPosition: "right 0.75rem center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "1.5em 1.5em",
+                paddingRight: "2.5rem",
+              }}
             >
               {categories.map((category, index) => (
                 <option key={index} value={category} className="bg-gray-800">
@@ -77,60 +104,56 @@ const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) =
           </div>
         </div>
 
-        {/* Slider Container - Using opacity instead of gradients */}
-        <div className="relative overflow-visible">
-          {/* Mobile View: Centered Large Slide with Partial Side Slides */}
-          <div className="block sm:hidden">
+        {/* Slider Container */}
+        <div className="relative overflow-visible w-full">
+          {/* Mobile View: Multi-Card Layout with Center Focus */}
+          <div className="block sm:hidden overflow-visible w-full -mx-4">
             <Swiper
-              spaceBetween={-80}
-              slidesPerView={1.8}
+              spaceBetween={-50}
+              slidesPerView={1.9}
               centeredSlides={true}
               loop={filteredCatalogs.length > 1}
-              className="px-4 pt-4 pb-6"
-              breakpoints={{
-                320: { slidesPerView: 1.5 },
-                480: { slidesPerView: 1.6 }
-              }}
+              className="pb-16 px-0 w-screen"
+              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             >
               {filteredCatalogs.map((catalog, index) => (
-                <SwiperSlide key={index} className="swiper-slide-opacity">
-                  <div className="flex flex-col items-center transition-opacity duration-300 swiper-slide-content">
-                    <div 
-                      className="relative overflow-hidden rounded-lg shadow-lg mx-auto"
-                      style={{ width: '200px', height: '300px' }}
-                    >
-                      <img
-                        src={catalog.image}
-                        alt={catalog.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
-                        <p className="text-white font-bold text-lg uppercase tracking-wide text-center">
-                          {catalog.title}
-                        </p>
+                <SwiperSlide key={index}>
+                  {({ isActive }) => (
+                    <div className="flex flex-col items-center justify-center">
+                      <div 
+                        className={`relative transition-all duration-300 rounded-lg shadow-md overflow-hidden
+                          ${isActive ? "scale-110 z-10" : "scale-90 z-0"}`}
+                        style={{ 
+                          width: "160px", 
+                          height: "220px",
+                          margin: "0 auto"
+                        }}
+                      >
+                        <img
+                          src={catalog.image}
+                          alt={catalog.title}
+                          className={`w-full h-full object-cover transition-all duration-300
+                            ${isActive ? "" : "blur-sm"}`}
+                        />
                       </div>
+                      {isActive && (
+                        <div className="mt-6 mb-2 text-center">
+                          <p className="text-white text-sm font-medium tracking-wider">
+                            {catalog.category}
+                          </p>
+                        </div>
+                      )}
                     </div>
-                    <p className="mt-4 text-sm font-medium text-center tracking-wider">
-                      {catalog.category}
-                    </p>
-                  </div>
+                  )}
                 </SwiperSlide>
               ))}
             </Swiper>
-            
-            {/* Custom CSS to handle opacity for partial slides in mobile view */}
-            <style jsx global>{`
-              .swiper-slide-opacity:not(.swiper-slide-active) {
-                opacity: 0.4;
-                transition: opacity 0.3s ease;
-              }
-            `}</style>
           </div>
 
-          {/* Desktop View: With opacity for partial slides */}
-          <div className="hidden sm:block">
+          {/* Desktop View: */}
+          <div className="hidden sm:block -mx-4 w-screen">
             <Swiper
-              spaceBetween={30}
+              spaceBetween={15}
               slidesPerView={5}
               loop={false}
               navigation={{
@@ -138,63 +161,56 @@ const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) =
                 prevEl: ".custom-swiper-prev",
               }}
               modules={[Navigation]}
-              className="px-4 pt-4 pb-8 desktop-swiper"
-              centerInsufficientSlides={false}
+              className="desktop-swiper px-0"
+              centerInsufficientSlides={true}
               allowTouchMove={true}
               breakpoints={{
-                640: { slidesPerView: 2.15, spaceBetween: 20 },
-                768: { slidesPerView: 3.15, spaceBetween: 20 },
-                1024: { slidesPerView: 4.15, spaceBetween: 20 },
-                1280: { slidesPerView: 5.15, spaceBetween: 20 },
+                640: { slidesPerView: 2.5, spaceBetween: 15 },
+                768: { slidesPerView: 3.5, spaceBetween: 15 },
+                1024: { slidesPerView: 4.5, spaceBetween: 15 },
+                1280: { slidesPerView: 5.5, spaceBetween: 15 },
               }}
+              onSlideChange={handleSlideChange}
+              onInit={handleSlideChange}
             >
               {filteredCatalogs.map((catalog, index) => (
-                <SwiperSlide key={index} style={{ width: '220px' }} className="desktop-slide">
-                  <div className="flex flex-col items-center">
-                    <div 
-                      className="relative overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105"
-                      style={{ width: '200px', height: '280px' }}
-                    >
-                      <img
-                        src={catalog.image}
-                        alt={catalog.title}
-                        className="w-full h-full object-cover"
-                      />
-                      {/* Logo badge or overlay can be added here if needed */}
-                      <div className="absolute top-0 right-0 p-2">
-                        {/* Add your logo badge here if needed */}
+                <SwiperSlide
+                  key={index}
+                  style={{ width: "220px" }}
+                  className="desktop-slide"
+                >
+                  {({ isVisible }) => {
+                    // A slide is fully visible if its index is in the visibleSlides array
+                    const isFullyVisible = visibleSlides.includes(index);
+                    
+                    // Only apply blur for navigation (not for filtering)
+                    const shouldBlur = selectedCategory === "ALL CATALOGUES" && !isFullyVisible;
+                    
+                    return (
+                      <div className="flex flex-col items-center">
+                        <div
+                          className="relative overflow-hidden rounded-lg shadow-lg transition-transform hover:scale-105"
+                          style={{ width: "200px", height: "280px" }}
+                        >
+                          <img
+                            src={catalog.image}
+                            alt={catalog.title}
+                            className={`w-full h-full object-cover transition-all duration-300
+                              ${shouldBlur ? "opacity-40 blur-sm" : ""}`}
+                          />
+                        </div>
+                        <p className="mt-4 text-sm md:text-base font-medium text-center tracking-wider">
+                          {catalog.title}
+                        </p>
                       </div>
-                    </div>
-                    <p className="mt-4 text-sm md:text-base font-medium text-center tracking-wider">
-                      {catalog.title}
-                    </p>
-                  </div>
+                    );
+                  }}
                 </SwiperSlide>
               ))}
             </Swiper>
 
-            {/* Custom CSS for desktop view partial slides */}
-            <style jsx global>{`
-              /* First and last visible slides in desktop view get opacity effect */
-              .desktop-swiper .swiper-slide-visible:first-child,
-              .desktop-swiper .swiper-slide-visible:last-child {
-                opacity: 0.4;
-                transition: opacity 0.3s ease;
-              }
-              
-              /* For edge cases with partial visibility */
-              .desktop-swiper .swiper-slide {
-                transition: opacity 0.3s ease;
-              }
-              
-              /* Add opacity to slides at the right edge that are partially visible */
-              .desktop-swiper .swiper-slide-visible.desktop-slide:nth-last-child(-n+1):not(.swiper-slide-active) {
-                opacity: 0.4;
-              }
-            `}</style>
-
             {/* Navigation Arrows */}
-            <div className="flex absolute mt-8 bottom-0 right-16 transform translate-y-10 items-center gap-4 z-20">
+            <div className="flex absolute mt-8 bottom-0 right-16 transform translate-y-16 items-center gap-4 z-20">
               <button className="custom-swiper-prev text-white text-2xl p-1">
                 <HiArrowNarrowLeft />
               </button>
