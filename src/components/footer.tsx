@@ -108,14 +108,14 @@ const Footer: React.FC = () => {
               </h3>
               <div className="relative mb-4">
                 <select
-                  className="w-[240px] sm:w-[330px] h-[45px] sm:h-[55px] bg-transparent border border-[#d0c4b7] 
+                  className="w-[280px] sm:w-[330px] h-[45px] sm:h-[55px] bg-transparent border border-[#d0c4b7] 
         px-3 sm:px-5 py-2 sm:py-4 rounded-lg focus:outline-none text-[#BCB5A4] 
-        text-xs sm:text-sm appearance-none pr-12 sm:pr-10 relative font-inter outline-4"
+        text-xs sm:text-sm appearance-none pr-8 sm:pr-10 relative font-inter outline-4"
                 >
                   <option>NATIONAL SUPPORT OFFICE</option>
                 </select>
                 {/* Custom Bigger Arrow */}
-                <div className="absolute top-1/2 right-3 sm:right-6 transform -translate-y-1/2 pointer-events-none">
+                <div className="absolute top-1/2 right-36 sm:right-6 transform -translate-y-1/2 pointer-events-none">
                   <svg
                     width="16"
                     height="16"
@@ -165,7 +165,7 @@ const Footer: React.FC = () => {
             </span>
             All Rights Reserved.
           </p>
-          <div className="flex space-x-3 mb-4 md:mb-0 justify-center md:justify-end">
+          <div className="flex space-x-3 mb-10 md:mb-0 justify-start md:justify-end w-full md:w-auto">
           {[
               { icon: Linkedin, link: "#" },
               { icon: Instagram, link: "#" },
