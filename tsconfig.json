@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types", "./node_modules/swiper"]
+
   },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-  
-    "compilerOptions": {
-      "moduleResolution": "node",
-      "typeRoots": ["./node_modules/@types", "./node_modules/swiper"]
-    }
-  
+    
 }
