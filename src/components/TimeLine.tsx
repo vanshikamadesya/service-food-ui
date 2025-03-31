@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SwiperCore from "swiper";
-import cn from "classnames";
+// import cn from "classnames";
 import React, { useState } from "react";
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 
