@@ -17,7 +17,7 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   // Base styles
-  const baseStyles = 'font-semibold md:rounded-lg rounded-[6px]  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const baseStyles = 'font-semibold md:rounded-xl rounded-[6px]  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
   
   // Variant styles
   const variantStyles = {
@@ -29,7 +29,7 @@ const Button = ({
   // Size styles
   const sizeStyles = {
     small: 'px-3 py-1 text-sm',
-    medium: 'px-3 py-2 text-base',
+    medium: 'px-0 py-2 text-base',
     large: 'px-8 py-3 text-lg'
   };
   

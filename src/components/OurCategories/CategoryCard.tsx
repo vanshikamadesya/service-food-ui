@@ -59,7 +59,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
         <CategoryButton
           text={buttonText}
           link={buttonLink}
-          className=" md:py-3 text-[11px] md:text-lg rounded-xl md:w-[290px] w-full font-inter mb-3 md:mb-0  "
+          className=" md:py-3 px-1 md:px-4 text-sm md:text-lg rounded-lg md:w-[340px] w-[220px] font-inter mb-3 md:mb-0  "
         />
       </div>
     )

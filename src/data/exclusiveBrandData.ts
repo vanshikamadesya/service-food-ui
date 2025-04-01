@@ -4,8 +4,9 @@ import balarsBg from "../assets/images/balars-bg.png";
 import balarsLogo from "../assets/images/balars-logo.png";
 import rawearthBg from "../assets/images/rawearth-bg.png";
 import rawearthLogo from "../assets/images/rawearth-logo.png";
+import { Brand } from "../components/ExclusiveBrands/TitleSection";
 
-export const brands = Array(7)
+export const brands: Brand[] = Array(7)
   .fill(null)
   .map((_, index) => ({
     name: `Brand ${index + 1}`,
