@@ -5,8 +5,14 @@ import Maps from "../components/Maps/Maps";
 const ContactUsPage = () => {
   return (
     <div>
-      <Index/>
-      <ContactForms />
+      <Index />
+      <ContactForms
+        title="CONTACT US"
+        titleAlignment="center"
+        titlePosition="top"
+        buttonAlignment="right"
+        buttonPosition="bottom"
+      />
       <Maps />
     </div>
   );
