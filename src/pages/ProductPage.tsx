@@ -1,8 +1,9 @@
 import OncePlace from "../components/OncePlace";
-import CatalogSlider from "../components/our-catalogues";
+import CatalogSlider from "../components/CatalogSlider";
 import banner from "../assets/images/banner.png";
 import { OurCategory } from "../components/OurCategories";
 import { ExclusiveBrand } from "../components/ExclusiveBrands/index";
+import { allCategories, catalogs } from "../data/ourCatelogDate";
 function ProductPage() {
   return (
     <>
@@ -13,7 +14,14 @@ function ProductPage() {
       />
       <OurCategory />
       <ExclusiveBrand />
-      <CatalogSlider />
+      <CatalogSlider
+        categories={allCategories}
+        catalogs={catalogs}
+        titleAlignment="center"
+        titlePosition="top"
+        arrowAlignment="right"
+        arrowPosition="bottom"
+      />
     </>
   );
 }

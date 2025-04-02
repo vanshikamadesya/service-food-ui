@@ -2,7 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 import { useState } from "react";
-import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
+import TitleSection from "./TitleSection";
+import SwiperNavigation from "./SwiperNavigation";
 
 interface CatalogItem {
   title: string;
@@ -13,9 +14,25 @@ interface CatalogItem {
 interface CatalogSliderProps {
   categories: string[];
   catalogs: CatalogItem[];
+  // New alignment props
+  title?: string;
+  showDivider?: boolean;
+  titleAlignment?: 'left' | 'center' | 'right';
+  titlePosition?: 'top' | 'bottom';
+  arrowAlignment?: 'left' | 'center' | 'right';
+  arrowPosition?: 'top' | 'bottom';
 }
 
-const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) => {
+const CatalogSlider: React.FC<CatalogSliderProps> = ({ 
+  categories, 
+  catalogs,
+  title = 'OUR CATEGORIES',
+  showDivider = true,
+  titleAlignment = 'center',
+  titlePosition = 'top',
+  arrowAlignment = 'right',
+  arrowPosition = 'bottom'
+}) => {
   const [selectedCategory, setSelectedCategory] = useState("ALL CATALOGUES");
   const [activeIndex, setActiveIndex] = useState(0);
   // Track visible slide indexes for desktop view but not for filtering
@@ -47,14 +64,23 @@ const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) =
     setVisibleSlides(fullyVisibleSlides);
   };
 
+  // Significantly reduced bottom padding when title is at bottom
+  const containerPadding = titlePosition === 'bottom' 
+    ? 'py-16 md:pt-24 md:pb-12' 
+    : 'py-16 md:py-24 md:pb-40';
+
   return (
-    <div className="sm:bg-gray-800 bg-gray-700 text-white py-16 md:py-24 md:pb-40 tracking-wide w-full overflow-hidden">
-      {/* Section Heading */}
+    <div className={`sm:bg-gray-800 bg-gray-500 text-white ${containerPadding} tracking-wide w-full overflow-hidden`}>
       <div className="container mx-auto px-4">
-        <h2 className="text-center text-xl sm:text-2xl font-semibold mb-2 text-white uppercase">
-          OUR CATEGORIES
-        </h2>
-        <div className="w-20 h-0.5 bg-white mx-auto mb-8"></div>
+        {/* Title Section at Top if titlePosition is top */}
+        {titlePosition === 'top' && (
+          <TitleSection
+            title={title}
+            showDivider={showDivider}
+            titleAlignment={titleAlignment}
+            className="text-white"
+          />
+        )}
 
         {/* Category Filter */}
         <div className="flex justify-center mb-8 md:mb-12">
@@ -110,10 +136,10 @@ const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) =
           <div className="block sm:hidden overflow-visible w-full -mx-4">
             <Swiper
               spaceBetween={-50}
-              slidesPerView={1.9}
+              slidesPerView={1.4}
               centeredSlides={true}
               loop={filteredCatalogs.length > 1}
-              className="pb-16 px-0 w-screen"
+              className={`px-0 w-screen ${titlePosition === "bottom" ? "pb-8" : "pb-16"}`}
               onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
             >
               {filteredCatalogs.map((catalog, index) => (
@@ -137,7 +163,7 @@ const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) =
                         />
                       </div>
                       {isActive && (
-                        <div className="mt-6 mb-2 text-center">
+                        <div className="mt-8 mb-0 text-center">
                           <p className="text-white text-sm font-medium tracking-wider">
                             {catalog.category}
                           </p>
@@ -150,8 +176,8 @@ const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) =
             </Swiper>
           </div>
 
-          {/* Desktop View: */}
-          <div className="hidden sm:block -mx-4 w-screen">
+          {/* Desktop View */}
+          <div className={`hidden sm:block -mx-4 w-screen ${titlePosition === "bottom" ? "mb-4" : "mb-8"}`}>
             <Swiper
               spaceBetween={15}
               slidesPerView={5}
@@ -209,17 +235,26 @@ const CatalogSlider: React.FC<CatalogSliderProps> = ({ categories, catalogs }) =
               ))}
             </Swiper>
 
-            {/* Navigation Arrows */}
-            <div className="flex absolute mt-8 bottom-0 right-16 transform translate-y-16 items-center gap-4 z-20">
-              <button className="custom-swiper-prev text-white text-2xl p-1">
-                <HiArrowNarrowLeft />
-              </button>
-              <button className="custom-swiper-next text-white text-2xl p-1">
-                <HiArrowNarrowRight />
-              </button>
+            {/* Navigation component */}
+            <div className={titlePosition === "bottom" ? "-mt-2" : ""}>
+              <SwiperNavigation 
+                arrowAlignment={arrowAlignment}
+                arrowPosition={arrowPosition}
+              />
             </div>
           </div>
         </div>
+        
+        {/* Title Section at Bottom if titlePosition is bottom */}
+        {titlePosition === 'bottom' && (
+          <TitleSection
+            title={title}
+            showDivider={showDivider}
+            titleAlignment={titleAlignment}
+            titlePosition="bottom"
+            className="text-white mt-4"
+          />
+        )}
       </div>
     </div>
   );

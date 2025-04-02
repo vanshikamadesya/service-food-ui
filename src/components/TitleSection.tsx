@@ -21,9 +21,9 @@ const TitleSection: React.FC<TitleSectionProps> = ({
 
   return (
     <div
-      className={`w-full ${positionClass    } text-${titleAlignment} ${className}`}
+      className={`w-full ${positionClass} text-${titleAlignment} ${className}`}
     >
-      <div className={`inline-block px-16 mb-3 md:mb-8`}>
+      <div className={`inline-block px-10 md:px-16 mb-3 md:mb-8`}>
       <h2 className={`text-lg md:text-3xl font-bold md:mb-3 ${className}`}>
       {title}
         </h2>
