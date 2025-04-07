@@ -8,73 +8,79 @@ import img7 from "../assets/images/ArticlePage/7.png";
 import img8 from "../assets/images/ArticlePage/8.png";
 import img9 from "../assets/images/ArticlePage/9.png";
 
-export interface Article {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-}
-
-export interface SwiperInstance {
-  slideNext: () => void;
-  slidePrev: () => void;
-  slides: any[];
-  activeIndex: number;
-}
+import { Article } from "../types/articleUtils";
 
 export const articles: Article[] = [
   {
     id: 1,
-    image: img1,
+    mediaUrl: img1,
+    mediaType: "image",
     title: "LOREM IPSUM",
-    description: "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci."
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci.",
   },
   {
     id: 2,
-    image: img2,
+    mediaUrl: img2,
+    mediaType: "image",
     title: "LOREM IPSUM",
-    description: "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci."
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci.",
   },
   {
     id: 3,
-    image: img3,
+    mediaUrl: img3,
+    mediaType: "image",
     title: "LOREM IPSUM",
-    description: "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci."
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci.",
   },
   {
     id: 4,
-    image: img4,
+    mediaUrl: img4,
+    mediaType: "image",
     title: "LOREM IPSUM",
-    description: "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci."
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci.",
   },
   {
     id: 5,
-    image: img5,
+    mediaUrl: img5,
+    mediaType: "image",
     title: "LOREM IPSUM",
-    description: "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci."
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci.",
   },
   {
     id: 6,
-    image: img6,
+    mediaUrl: img6,
+    mediaType: "image",
     title: "LOREM IPSUM",
-    description: "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci."
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci.",
   },
   {
     id: 7,
-    image: img7,
+    mediaUrl: img7,
+    mediaType: "image",
     title: "LOREM IPSUM",
-    description: "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci."
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci.",
   },
   {
     id: 8,
-    image: img8,
+    mediaUrl: img8,
+    mediaType: "image",
     title: "LOREM IPSUM",
-    description: "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci."
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci.",
   },
   {
     id: 9,
-    image: img9,
+    mediaUrl: img9,
+    mediaType: "image",
     title: "LOREM IPSUM",
-    description: "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci."
-  }
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Parturient consectetur nunc quis turpis nibh interdum proin pellentesque arcu. In orci.",
+  },
 ];
