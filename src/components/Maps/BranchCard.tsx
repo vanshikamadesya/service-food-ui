@@ -1,46 +1,58 @@
 import React from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
-import { BranchInfo } from "../../data/branchInfo"; // Path already correct
 
 interface BranchCardProps {
-  branchInfo: BranchInfo;
+  name: string;
+  phone: string;
+  email: string;
+  address: string;
+  postal?: string;
+  image?: string;
+  contentOrder?: Array<"title" | "phone" | "email" | "address">;
 }
 
-const BranchCard: React.FC<BranchCardProps> = ({ branchInfo }) => {
-  return (
-    <div className="space-y-4">
-      {/* Compact image section */}
-      <div className="mb-4">
-        <div className="bg-gray-100 rounded-md h-40 overflow-hidden">
-          <img
-            src={branchInfo.image || "https://via.placeholder.com/150"}
-            alt={branchInfo.image ? branchInfo.name : "No image available"}
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
-      {/* Compact contact info */}
-      <h1 className="text-xl font-bold text-gray-700 mb-3">
-        {branchInfo.name}
+const BranchCard: React.FC<BranchCardProps> = ({
+  name,
+  phone,
+  email,
+  address,
+  postal,
+  contentOrder = ["title", "phone", "email", "address"]
+}) => {
+  // Create components for each content section
+  const contentComponents: Record<string, React.ReactNode> = {
+    title: (
+      <h1 key="title" className="hidden sm:block text-xl font-bold text-gray-700 mb-2 ">
+        {name}
       </h1>
-      <div className="space-y-1.5">
-        <div className="flex items-start">
-          <Phone className="h-5 w-5 text-gray-500 mr-2 mt-1" />
-          <span className="text-gray-700">{branchInfo.phone}</span>
-        </div>
-        <div className="flex items-start">
-          <Mail className="h-5 w-5 text-gray-500 mr-2 mt-1" />
-          <span className="text-gray-700">{branchInfo.email}</span>
-        </div>
-        <div className="flex items-start">
-          <MapPin className="h-5 w-5 text-gray-500 mr-2 mt-1" />
-          <div className="text-gray-700">
-            <div>{branchInfo.address}</div>
-            <div>{branchInfo.postal}</div>
-          </div>
+    ),
+    phone: (
+      <div key="phone" className="flex items-start  ">
+        <span className="text-[#505050] text-[13px] md:text-[16px] font-medium md:tracking-wider">P. {phone}</span>
+      </div>
+    ),
+    email: (
+      <div key="email" className="flex items-start  ">
+        <span className="text-[#505050] text-[13px] md:text-[16px] font-medium md:tracking-wider">E. {email}</span>
+      </div>
+    ),
+    address: (
+      <div key="address" className="flex items-start mb-1 ">
+        <div className="text-[#505050] text-[13px] md:text-[16px] font-medium md:tracking-wider">
+          <div>{address}</div>
+          {postal && <div>{postal}</div>}
         </div>
       </div>
+    )
+  };
+
+  // Render content in the specified order
+  return (
+    <div className=" font-inter">
+      {contentOrder.map(type => (
+        <React.Fragment key={type}>
+          {contentComponents[type]}
+        </React.Fragment>
+      ))}
     </div>
   );
 };

@@ -32,7 +32,21 @@ const pinPositions: PinPositionMap = {
   "GREYMOUTH": { top: "34%", left: "45.3%" }
 };
 
-const Maps: React.FC = () => {
+interface MapsProps {
+  // Content order configuration for both main and card sections
+  contentOrder?: {
+    main?: Array<"selector" | "image" | "info">;
+    card?: Array<"title" | "phone" | "email" | "address">;
+  }
+}
+
+const Maps: React.FC<MapsProps> = ({ 
+  // Default order - can be overridden by parent component
+  contentOrder = {
+    main: ["selector", "image", "info"],
+    card: ["title", "phone", "email", "address"]
+  } 
+}) => {
   // State for selected branch
   const [selectedBranch, setSelectedBranch] = useState("AUCKLAND FOODSERVICE");
 
@@ -86,10 +100,11 @@ const Maps: React.FC = () => {
         })}
       </div>
 
-      {/* Branch selector component (contains dropdown and branch card) */}
+      {/* Branch selector component with configurable content order */}
       <BranchSelector 
         selectedBranch={selectedBranch} 
         setSelectedBranch={setSelectedBranch}
+        contentOrder={contentOrder}
       />
     </div>
   );

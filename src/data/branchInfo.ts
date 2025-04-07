@@ -1,4 +1,4 @@
-import foodserviceMaps from "../assets/images/ContactUs/foodserviceMaps.png"; // ✅ Correct way
+import foodserviceMaps from "../assets/images/ContactUs/foodserviceMaps.png"; 
 
 export interface BranchInfo {
   name: string;
@@ -21,7 +21,8 @@ export const branches = [
   "AUCKLAND REPACKS",
   "WELLINGTON (TE PĀTAKA)",
   "GISBORNE/TAIRAWHITI",
-  "AUCKLAND LEONARD'S"
+  "AUCKLAND LEONARD'S",
+  "GREYMOUTH"
 ];
 
 export const branchData: Record<string, BranchInfo> = {

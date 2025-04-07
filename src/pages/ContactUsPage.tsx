@@ -1,6 +1,6 @@
 import ContactForms from "../components/ContactForms";
 import Index from "../components/Contactus";
-import Maps from "../components/Maps/Maps";
+import MapsModule from "../components/Maps";
 
 const ContactUsPage = () => {
   return (
@@ -13,7 +13,7 @@ const ContactUsPage = () => {
         buttonAlignment="right"
         buttonPosition="bottom"
       />
-      <Maps />
+      <MapsModule/>
     </div>
   );
 };
