@@ -1,6 +1,6 @@
 import Video from "../assets/images/more-video.mp4";
 
-interface VideoItem {
+export interface VideoItem {
   videoSrc: string;
   title: string;
   description: string;
