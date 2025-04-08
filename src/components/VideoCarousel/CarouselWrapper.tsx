@@ -28,12 +28,14 @@ const CarouselWrapper: React.FC<CarouselWrapperProps> = ({
         1024: { slidesPerView: 4, spaceBetween: 16, centeredSlides: false },
       }}
       navigation={{ nextEl: ".next-button", prevEl: ".prev-button" }}
-      className="pb-8 md:pb-10"
+      className="pb-8 md:pb-10 "
       onSlideChange={onSlideChange}
     >
       {children.map((child, index) => (
         <SwiperSlide key={index} className="flex justify-center">
-          {child}
+          <div className={isMobile ? "w-[100%] transform scale-[0.9] active:scale-100 transition-transform duration-300" : "w-full"}>
+            {child}
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
