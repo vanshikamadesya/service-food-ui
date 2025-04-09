@@ -7,10 +7,10 @@ import Ar5 from "../assets/images/ar-5.png";
 import Ar6 from "../assets/images/ar-6.png";
 
 // Define an interface for article items
-interface ArticleItem {
+export interface ArticleItem {
   id: number;
   mediaSrc: string;
-  isVideo?: boolean; 
+  isVideo?: boolean;
   title: string;
   description: string;
 }
@@ -21,49 +21,57 @@ export const articleData: ArticleItem[] = [
     id: 1,
     mediaSrc: Ar1,
     title: "LOREM IPSUM",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: 2,
     mediaSrc: Ar2,
     isVideo: true,
     title: "LOREM IPSUM",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: 3,
     mediaSrc: Ar3,
     title: "LOREM IPSUM",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: 4,
     mediaSrc: Ar4,
     title: "LOREM IPSUM",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: 5,
     mediaSrc: Ar5,
     title: "LOREM IPSUM",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: 6,
     mediaSrc: Ar6,
     title: "LOREM IPSUM",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: 7,
     mediaSrc: Ar5,
     title: "LOREM IPSUM",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: 8,
     mediaSrc: Ar6,
     title: "LOREM IPSUM",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
 ];
