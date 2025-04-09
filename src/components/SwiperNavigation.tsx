@@ -30,10 +30,10 @@ const SwiperNavigation: React.FC<SwiperNavigationProps> = ({
 
   return (
     <div className={`flex absolute ${getArrowPositionClass()} ${getArrowAlignmentClass()} items-center gap-4 z-20 ${className}`}>
-      <button className="custom-swiper-prev text-white text-2xl p-1">
+      <button className="custom-swiper-prev text-2xl p-1">
         <HiArrowNarrowLeft />
       </button>
-      <button className="custom-swiper-next text-white text-2xl p-1">
+      <button className="custom-swiper-next text-2xl p-1">
         <HiArrowNarrowRight />
       </button>
     </div>
