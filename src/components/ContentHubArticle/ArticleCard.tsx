@@ -17,11 +17,11 @@ interface ArticleCardProps {
   buttonAlignment: Alignment;
   cardVerticalPosition: VerticalPosition;
   videoControlPosition: VideoControlPosition;
+  buttonClassName?: string;
 }
 
 const ArticleCard: React.FC<ArticleCardProps> = ({
   article,
-  index,
   cardElementsOrder,
   titleAlignment,
   descriptionAlignment,
