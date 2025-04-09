@@ -1,8 +1,8 @@
 import { useState } from "react";
-import ArticleList from "../components/ContentHubArticle/ArticleList";
-import ContentHub from "../components/ContentHub";
-import OurVideos from "../components/OurVideo";
+import ArticleList from "../components/ContentHubArticle/ArticleList";;
+import ContentHub from "../components/ContentHub";;;
 import { OurStories } from "../components/VideoCarousel";
+import { OurVideo } from "../components/OurVideo/index";;
 import bgImg from "../assets/images/bannerContent.png";
 import BannerComponent from "../components/BannerComponent";
 import {
@@ -35,8 +35,8 @@ const ContentHubPage = () => {
         subtitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
       />
-      <OurStories />
-      <OurVideos />
+      <OurStories  />
+      <OurVideo />
       <BannerComponent
         backgroundImage={bgImg}
         title="Lorem Ipsum Dolor Sit Dolor Sit Siquamemt"
@@ -49,7 +49,7 @@ const ContentHubPage = () => {
       />
       <ArticleList
         articles={articleData}
-        mainTitle="Media Articles"
+        mainTitle="Media Articles "
         backgroundColor="#EFEBE7"
         titlePosition={titlePosition}
         cardElementsOrder={cardElementsOrder}
@@ -63,4 +63,4 @@ const ContentHubPage = () => {
   );
 };
 
-export default ContentHubPage;
+export default ContentHubPage;;
